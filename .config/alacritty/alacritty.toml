@@ -258,4 +258,4 @@ opacity = 0.8
 x = 25
 y = 20
 
-import = ["~/.config/alacritty/theme/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]

@@ -13,6 +13,10 @@
     # azure
     # AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
     ~/.config/azure/config: .config/azure/config
+    ~/.config/alacritty/themes/catppuccin-frappe.toml: scripts/.catppuccin/alacritty/catppuccin-frappe.toml
+    ~/.config/alacritty/themes/catppuccin-latte.toml: scripts/.catppuccin/alacritty/catppuccin-latte.toml
+    ~/.config/alacritty/themes/catppuccin-macchiato.toml: scripts/.catppuccin/alacritty/catppuccin-macchiato.toml
+    ~/.config/alacritty/themes/catppuccin-mocha.toml: scripts/.catppuccin/alacritty/catppuccin-mocha.toml
 
      # git
     ~/.config/git/attributes: .config/git/attributes
