@@ -25,6 +25,10 @@
     ~/.config/bat/themes/Catppuccin-macchiato.tmTheme: scripts/.catppuccin/bat/Catppuccin-macchiato.tmTheme
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme: scripts/.catppuccin/bat/Catppuccin-mocha.tmTheme
     
+    # docker
+    ~/.docker/config.json: .docker/config.json
+    ~/.docker/daemon.json: .docker/daemon.json
+
     # git
     ~/.config/git/attributes: .config/git/attributes
     ~/.config/git/config: .config/git/config
