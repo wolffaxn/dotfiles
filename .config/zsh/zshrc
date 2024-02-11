@@ -101,6 +101,11 @@ bashcompinit
 
 zmodload -i zsh/complist
 
+# use vim-like key bindings by default:
+bindkey -v
+bindkey ^R history-incremental-search-backward 
+bindkey ^S history-incremental-search-forward
+
 if command -v antibody > /dev/null; then
     if [[ ! -e "$ZDOTDIR/.zsh_plugins.sh" ]]; then
         antibody bundle < "$ZDOTDIR/.antibody_bundle" > "$ZDOTDIR/.zsh_plugins.sh"
