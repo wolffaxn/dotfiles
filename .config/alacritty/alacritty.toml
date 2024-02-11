@@ -1,6 +1,7 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
 # Live config reload (changes require restart)
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 live_config_reload = true
 
 [cursor]
@@ -13,7 +14,7 @@ TERM = "xterm-256color"
 
 # Point size of the font
 [font]
-size = 14.0
+size = 16.0
 
 # Normal (roman) font face
 [font.normal]
@@ -25,10 +26,10 @@ style = "Regular"
 family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
-# Medium font face
-[font.medium]
+# Bold Italic font face
+[font.bold_italic]
 family = "JetBrainsMono Nerd Font"
-style = "Medium"
+style = "Bold Italic"
 
 # Italic font face
 [font.italic]
@@ -257,5 +258,3 @@ opacity = 0.8
 [window.padding]
 x = 25
 y = 20
-
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
