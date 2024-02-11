@@ -12,3 +12,7 @@
     ~/.config/git/config: .config/git/config
     ~/.config/git/config.local: .config/git/config.local
     ~/.config/git/ignore: .config/git/ignore
+
+    # ssh
+    ~/.config/ssh/config: .config/ssh/config
+    ~/.config/ssh/config.local: .config/ssh/config.local
