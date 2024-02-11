@@ -25,6 +25,9 @@
     ~/.config/bat/themes/Catppuccin-macchiato.tmTheme: scripts/.catppuccin/bat/Catppuccin-macchiato.tmTheme
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme: scripts/.catppuccin/bat/Catppuccin-mocha.tmTheme
     
+    # cargo
+    ~/.config/cargo/config.toml: .config/cargo/config.toml
+    
     # docker
     ~/.docker/config.json: .docker/config.json
     ~/.docker/daemon.json: .docker/daemon.json
