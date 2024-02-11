@@ -42,3 +42,6 @@
     # ssh
     ~/.config/ssh/config: .config/ssh/config
     ~/.config/ssh/config.local: .config/ssh/config.local
+
+    # starship
+    ~/.config/starship.toml: .config/starship.toml
