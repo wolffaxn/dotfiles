@@ -5,3 +5,6 @@
 [submodule "scripts/.catppuccin/alacritty"]
 	path = scripts/.catppuccin/alacritty
 	url = https://github.com/catppuccin/alacritty
+[submodule "scripts/.catppuccin/bat"]
+	path = scripts/.catppuccin/bat
+	url = https://github.com/catppuccin/bat

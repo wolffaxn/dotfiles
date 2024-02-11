@@ -20,6 +20,10 @@
 
     # bat
     ~/.config/bat/config: .config/bat/config    
+    ~/.config/bat/themes/Catppuccin-frappe.tmTheme: scripts/.catppuccin/bat/Catppuccin-frappe.tmTheme
+    ~/.config/bat/themes/Catppuccin-latte.tmTheme: scripts/.catppuccin/bat/Catppuccin-latte.tmTheme
+    ~/.config/bat/themes/Catppuccin-macchiato.tmTheme: scripts/.catppuccin/bat/Catppuccin-macchiato.tmTheme
+    ~/.config/bat/themes/Catppuccin-mocha.tmTheme: scripts/.catppuccin/bat/Catppuccin-mocha.tmTheme
     
     # git
     ~/.config/git/attributes: .config/git/attributes
