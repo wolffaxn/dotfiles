@@ -54,4 +54,5 @@
     ~/.zshenv: .zshenv
     ~/.config/zsh/.antibody_bundle: .config/zsh/antibody_bundle
     ~/.config/zsh/.zlogin: .config/zsh/zlogin
+    ~/.config/zsh/.zprofile: .config/zsh/zprofile
     ~/.config/zsh/.zshrc: .config/zsh/zshrc
