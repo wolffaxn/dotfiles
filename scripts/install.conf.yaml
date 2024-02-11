@@ -7,6 +7,9 @@
 - clean: ['~']
 
 - link:
+    # alacritty
+    ~/.config/alacritty/alacritty.toml: .config/alacritty/alacritty.toml    
+    
     # azure
     # AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
     ~/.config/azure/config: .config/azure/config
