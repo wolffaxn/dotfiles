@@ -5,3 +5,10 @@
       relink: true
 
 - clean: ['~']
+
+- link:
+     # git
+    ~/.config/git/attributes: config/git/attributes
+    ~/.config/git/config: config/git/config
+    ~/.config/git/config.local: config/git/config.local
+    ~/.config/git/ignore: config/git/ignore
