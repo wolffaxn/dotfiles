@@ -1,34 +1,28 @@
 add_newline = true
 
-format = """\
-  $time\
-  $username\
-  $hostname\
-  $directory\
-  $nix_shell\
-  $memory_usage\
-  $env_var\
-  $git_branch\
-  $git_commit\
-  $git_state\
-  $git_status\
-  $cmd_duration\
-  $custom\
-  $line_break\
-  $jobs\
-  $character\
-  """
+[username]
+format = "[$user]($style)@"
+style_user = "bold #50fa7b"
+style_root = "bold #ff5555"
+show_always = true
+
+[hostname]
+disabled = false
+format = "[$hostname](bold #50fa7b) "
+ssh_only = false
+trim_at = "."
 
 [character]
 format="$symbol "
-error_symbol="[»](bold #ff5555)"
-success_symbol="[»](bold  #50fa7b)"
+success_symbol="[❯](bold #50fa7b)"
+error_symbol="[✗](bold #ff5555)"
 
 [cmd_duration]
-style = "bold #f1fa8c"
-min_time=6_000
+min_time = 500
+format = "took [$duration]($style) "
 
 [directory]
+disabled = false
 format = "in [$path]($style)[$read_only]($read_only_style) "
 style = "bold #50fa7b"
 
@@ -37,13 +31,3 @@ style = "bold #ff79c6"
 
 [git_status]
 style = "bold #ff5555"
-
-[time]
-disabled = false
-format="at [$time]($style) "
-style = "bold blue"
-time_format = "%T"
-
-[username]
-format = "[$user]($style) on "
-style_user = "bold #8be9fd"
