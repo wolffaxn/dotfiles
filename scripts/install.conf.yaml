@@ -7,6 +7,10 @@
 - clean: ['~']
 
 - link:
+    # azure
+    # AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
+    ~/.config/azure/config: .config/azure/config
+
      # git
     ~/.config/git/attributes: .config/git/attributes
     ~/.config/git/config: .config/git/config
