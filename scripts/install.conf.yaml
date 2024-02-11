@@ -13,6 +13,9 @@
     ~/.config/git/config.local: .config/git/config.local
     ~/.config/git/ignore: .config/git/ignore
 
+    # gh
+    ~/.config/gh/config.yml: .config/gh/config.yml
+
     # ssh
     ~/.config/ssh/config: .config/ssh/config
     ~/.config/ssh/config.local: .config/ssh/config.local
