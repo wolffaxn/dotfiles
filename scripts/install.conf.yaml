@@ -18,7 +18,10 @@
     ~/.config/alacritty/themes/catppuccin-macchiato.toml: scripts/.catppuccin/alacritty/catppuccin-macchiato.toml
     ~/.config/alacritty/themes/catppuccin-mocha.toml: scripts/.catppuccin/alacritty/catppuccin-mocha.toml
 
-     # git
+    # bat
+    ~/.config/bat/config: .config/bat/config    
+    
+    # git
     ~/.config/git/attributes: .config/git/attributes
     ~/.config/git/config: .config/git/config
     ~/.config/git/config.local: .config/git/config.local
