@@ -49,3 +49,9 @@
 
     # starship
     ~/.config/starship.toml: .config/starship.toml
+
+    # zsh
+    ~/.zshenv: .zshenv
+    ~/.config/zsh/.antibody_bundle: .config/zsh/antibody_bundle
+    ~/.config/zsh/.zlogin: .config/zsh/zlogin
+    ~/.config/zsh/.zshrc: .config/zsh/zshrc
