@@ -88,9 +88,9 @@ setopt share_history
 # init starship cross-shell prompt
 eval "$(starship init zsh)"
 
-#
-# Autocompletion
-#
+if command -v brew > /dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
 # enable completion
 autoload -Uz compinit
