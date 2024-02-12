@@ -56,6 +56,9 @@
     # starship
     ~/.config/starship.toml: .config/starship.toml
 
+    # zellij
+    ~/.config/zellij/config.kdl: .config/zellij/config.kdl
+    
     # zsh
     ~/.zshenv: .zshenv
     ~/.config/zsh/.antibody_bundle: .config/zsh/antibody_bundle
