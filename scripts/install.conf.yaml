@@ -42,9 +42,9 @@
     ~/.config/gh/config.yml: .config/gh/config.yml
 
     # gnuppg
-    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
-    ~/.gnupg/gpg.conf: .gnupg/gpg.conf
-    ~/.gnupg/scdaemon.conf: .gnupg/scdaemon.conf
+    ~/.config/gnupg/gpg-agent.conf: .config/gnupg/gpg-agent.conf
+    ~/.config/gnupg/gpg.conf: .config/gnupg/gpg.conf
+    ~/.config/gnupg/scdaemon.conf: .config/gnupg/scdaemon.conf
 
     # ssh
     ~/.config/ssh/config: .config/ssh/config
