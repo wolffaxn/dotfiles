@@ -49,6 +49,9 @@
     ~/.config/gnupg/gpg.conf: .config/gnupg/gpg.conf
     ~/.config/gnupg/scdaemon.conf: .config/gnupg/scdaemon.conf
 
+    # hushlogin
+    ~/.hushlogin: .hushlogin
+  
     # ssh
     ~/.config/ssh/config: .config/ssh/config
     ~/.config/ssh/config.local: .config/ssh/config.local
