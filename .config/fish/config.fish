@@ -6,6 +6,9 @@ if test -d "/opt/homebrew"
 end
 
 set -gxp PATH $HOMEBREW_PREFIX/sbin $HOMEBREW_PREFIX/bin /usr/local/sbin /usr/local/bin
+set -gxp CARGO_HOME "$HOME/.config/cargo"
+set -gxp RUSTUP_HOME "$HOME/.config/rustup"
+
 set -gx EDITOR nvim
 set -gx GPG_TTY (tty)
 

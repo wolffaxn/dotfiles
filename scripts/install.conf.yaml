@@ -52,15 +52,18 @@
     # hushlogin
     ~/.hushlogin: .hushlogin
   
+    # rustup
+    ~/.config/rustup/settings.toml: .config/rustup/settings.toml
+
     # ssh
     ~/.config/ssh/config: .config/ssh/config
     ~/.config/ssh/config.local: .config/ssh/config.local
 
-    # yamllint
-    ~/.config/yamllint/config: .config/yamllint/config
-
     # starship
     ~/.config/starship.toml: .config/starship.toml
+
+    # yamllint
+    ~/.config/yamllint/config: .config/yamllint/config
 
     # zellij
     ~/.config/zellij/config.kdl: .config/zellij/config.kdl
