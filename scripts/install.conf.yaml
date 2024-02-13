@@ -32,6 +32,9 @@
     ~/.docker/config.json: .docker/config.json
     ~/.docker/daemon.json: .docker/daemon.json
 
+     # fish
+    ~/.config/fish/config.fish: .config/fish/config.fish
+
     # git
     ~/.config/git/attributes: .config/git/attributes
     ~/.config/git/config: .config/git/config
