@@ -19,3 +19,6 @@ set fish_greeting ""
 status --is-interactive; and source (jump shell fish | psub)
 
 eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+
+# starship
+starship init fish | source
