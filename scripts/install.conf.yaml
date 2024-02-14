@@ -51,7 +51,10 @@
 
     # hushlogin
     ~/.hushlogin: .hushlogin
-  
+    
+    # inputrc
+    ~/.inputrc: .inputrc
+
     # rustup
     ~/.config/rustup/settings.toml: .config/rustup/settings.toml
 
