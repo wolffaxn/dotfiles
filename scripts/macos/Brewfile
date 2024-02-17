@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # Brewfile
 #
-# Use `brew bundle install --file ,Brewfile>` to install the formulas listed below.
+# Use `brew bundle install --file <Brewfile>` to install the formulas listed below.
 
 brew 'ansible'
 brew 'autoconf'
@@ -17,6 +17,7 @@ brew 'coreutils'
 brew 'csshx'
 brew 'curl'
 brew 'diff-so-fancy'
+brew 'dockutil'
 brew 'dos2unix'
 brew 'eza'
 brew 'gh'
