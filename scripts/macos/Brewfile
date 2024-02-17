@@ -52,3 +52,12 @@ brew 'watch'
 brew 'wget'
 brew 'zsh'
 brew 'zsh-completions'
+
+# development
+brew 'ant'
+brew 'go'
+brew 'gradle'
+brew 'maven'
+brew 'python'
+brew 'rustup-init'
+cask 'temurin'
