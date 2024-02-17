@@ -66,3 +66,12 @@ cask 'temurin'
 brew 'gnupg'
 brew 'hopenpgp-tools'
 brew 'ykman'
+
+# macos apps
+cask_args appdir: '/Applications'
+cask 'alacritty'
+cask 'brave-browser'
+cask 'iterm2'
+cask 'karabiner-elements'
+cask 'keepassxc'
+cask 'spotify'
