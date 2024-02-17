@@ -61,3 +61,8 @@ brew 'maven'
 brew 'python'
 brew 'rustup-init'
 cask 'temurin'
+
+# gnupg related tools
+brew 'gnupg'
+brew 'hopenpgp-tools'
+brew 'ykman'
