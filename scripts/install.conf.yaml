@@ -55,6 +55,11 @@
     # inputrc
     ~/.inputrc: .inputrc
 
+    # nvim
+    ~/.config/nvim:
+      glob: true
+      path: .config/nvim/*
+    
     # rustup
     ~/.config/rustup/settings.toml: .config/rustup/settings.toml
 
