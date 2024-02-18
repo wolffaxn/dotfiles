@@ -82,3 +82,8 @@
     ~/.config/zsh/.zlogin: .config/zsh/zlogin
     ~/.config/zsh/.zprofile: .config/zsh/zprofile
     ~/.config/zsh/.zshrc: .config/zsh/zshrc
+
+    # bin
+    ~/.local/bin: 
+      glob: true
+      path: .local/bin/*
