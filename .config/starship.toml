@@ -1,30 +1,46 @@
-add_newline = true
+# ~/.config/starship.toml
+
+add_newline = false
+command_timeout = 1000
+format = """$os$username$hostname$kubernetes$directory$git_branch$git_status"""
+
+[character]
+success_symbol=""
+error_symbol=""
+
+[os]
+format = '[$symbol](bold #50fa7b) '   
+disabled = false
+
+[os.symbols]
+Arch = '󰣇'
+Debian = " "
+FreeBSD = " "
+Macos = '󰀵'
+NixOS = " "
+Ubuntu = ''
+Windows = ' '
 
 [username]
-format = "[$user]($style)@"
+format = "[$user]($style)"
 style_user = "bold #50fa7b"
 style_root = "bold #ff5555"
 show_always = true
+disabled = false
 
 [hostname]
-disabled = false
-format = "[$hostname](bold #50fa7b) "
+format = "[@$hostname](bold #50fa7b) "
 ssh_only = false
-trim_at = "."
-
-[character]
-format="$symbol "
-success_symbol="[❯](bold #50fa7b)"
-error_symbol="[✗](bold #ff5555)"
-
-[cmd_duration]
-min_time = 500
-format = "took [$duration]($style) "
-
-[directory]
 disabled = false
-format = "in [$path]($style)[$read_only]($read_only_style) "
+
+# Shows current directory
+[directory]
+format = 'at [$path]($style)[$read_only]($read_only_style) '
 style = "bold #50fa7b"
+read_only_style = "bold #ff5555"
+read_only = "  "
+home_symbol = "󰋜 ~"
+disabled = false
 
 [git_branch]
 style = "bold #ff79c6"
