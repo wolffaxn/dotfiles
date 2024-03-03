@@ -1,10 +1,3 @@
-# homebrew
-if test -d "/opt/homebrew"
-    set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
-    set -gx HOMEBREW_PREFIX "/opt/homebrew";
-    set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
-end
-
 set -gxp PATH $HOMEBREW_PREFIX/sbin $HOMEBREW_PREFIX/bin /usr/local/sbin /usr/local/bin
 
 # don't show any greetings
