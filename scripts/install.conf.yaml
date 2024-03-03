@@ -33,6 +33,9 @@
     ~/.docker/daemon.json: .docker/daemon.json
 
      # fish
+    ~/.config/fish/conf.d:
+      glob: true
+      path: .config/fish/conf.d/*
     ~/.config/fish/config.fish: .config/fish/config.fish
 
     # git
