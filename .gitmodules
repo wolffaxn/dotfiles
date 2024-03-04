@@ -8,3 +8,6 @@
 [submodule "scripts/.catppuccin/bat"]
 	path = scripts/.catppuccin/bat
 	url = https://github.com/catppuccin/bat
+[submodule "scripts/.catppuccin/fish"]
+	path = scripts/.catppuccin/fish
+	url = https://github.com/catppuccin/fish.git

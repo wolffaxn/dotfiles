@@ -36,6 +36,9 @@
     ~/.config/fish/conf.d:
       glob: true
       path: .config/fish/conf.d/*
+    ~/.config/fish/themes:
+      glob: true
+      path: scripts/.catppuccin/fish/themes/*
     ~/.config/fish/config.fish: .config/fish/config.fish
 
     # git
