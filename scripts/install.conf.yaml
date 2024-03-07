@@ -8,88 +8,85 @@
 
 - link:
     # alacritty
-    ~/.config/alacritty/alacritty.toml: .config/alacritty/alacritty.toml    
-    ~/.config/alacritty/themes/catppuccin-frappe.toml: scripts/.catppuccin/alacritty/catppuccin-frappe.toml
-    ~/.config/alacritty/themes/catppuccin-latte.toml: scripts/.catppuccin/alacritty/catppuccin-latte.toml
-    ~/.config/alacritty/themes/catppuccin-macchiato.toml: scripts/.catppuccin/alacritty/catppuccin-macchiato.toml
-    ~/.config/alacritty/themes/catppuccin-mocha.toml: scripts/.catppuccin/alacritty/catppuccin-mocha.toml
-    
+    ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
+    ~/.config/alacritty/themes:
+      glob: true
+      path: scripts/.catppuccin/alacritty/*
+
     # azure
     # AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
-    ~/.config/azure/config: .config/azure/config
+    ~/.config/azure/config: config/azure/config
 
     # bat
-    ~/.config/bat/config: .config/bat/config    
-    ~/.config/bat/themes/Catppuccin-frappe.tmTheme: scripts/.catppuccin/bat/Catppuccin-frappe.tmTheme
-    ~/.config/bat/themes/Catppuccin-latte.tmTheme: scripts/.catppuccin/bat/Catppuccin-latte.tmTheme
-    ~/.config/bat/themes/Catppuccin-macchiato.tmTheme: scripts/.catppuccin/bat/Catppuccin-macchiato.tmTheme
-    ~/.config/bat/themes/Catppuccin-mocha.tmTheme: scripts/.catppuccin/bat/Catppuccin-mocha.tmTheme
+    ~/.config/bat/config: config/bat/config
+    ~/.config/bat/themes:
+      glob: true
+      path: scripts/.catppuccin/bat/*
     
     # cargo
-    ~/.config/cargo/config.toml: .config/cargo/config.toml
+    ~/.config/cargo/config.toml: config/cargo/config.toml
     
     # docker
-    ~/.docker/config.json: .docker/config.json
-    ~/.docker/daemon.json: .docker/daemon.json
+    ~/.docker/config.json: docker/config.json
+    ~/.docker/daemon.json: docker/daemon.json
 
      # fish
+    ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/conf.d:
       glob: true
-      path: .config/fish/conf.d/*
+      path: config/fish/conf.d/*
     ~/.config/fish/themes:
       glob: true
       path: scripts/.catppuccin/fish/themes/*
-    ~/.config/fish/config.fish: .config/fish/config.fish
 
     # git
-    ~/.config/git/attributes: .config/git/attributes
-    ~/.config/git/config: .config/git/config
-    ~/.config/git/config.local: .config/git/config.local
-    ~/.config/git/ignore: .config/git/ignore
+    ~/.config/git:
+      glob: true
+      path: config/git/*
 
     # gh
-    ~/.config/gh/config.yml: .config/gh/config.yml
+    ~/.config/gh/config.yml: config/gh/config.yml
 
     # gnuppg
-    ~/.config/gnupg/gpg-agent.conf: .config/gnupg/gpg-agent.conf
-    ~/.config/gnupg/gpg.conf: .config/gnupg/gpg.conf
-    ~/.config/gnupg/scdaemon.conf: .config/gnupg/scdaemon.conf
+    ~/.config/gnupg:
+      glob: true
+      path: config/gnupg/*
 
     # hushlogin
-    ~/.hushlogin: .hushlogin
+    ~/.hushlogin: hushlogin
     
     # inputrc
-    ~/.inputrc: .inputrc
+    ~/.inputrc: inputrc
 
     # nvim
     ~/.config/nvim:
       glob: true
-      path: .config/nvim/*
+      path: config/nvim/*
     
     # rustup
-    ~/.config/rustup/settings.toml: .config/rustup/settings.toml
+    ~/.config/rustup/settings.toml: config/rustup/settings.toml
 
     # ssh
-    ~/.config/ssh/config: .config/ssh/config
-    ~/.config/ssh/config.local: .config/ssh/config.local
+    ~/.config/ssh:
+      glob: true
+      path: config/ssh/*
 
     # starship
-    ~/.config/starship.toml: .config/starship.toml
+    ~/.config/starship.toml: config/starship.toml
 
     # yamllint
-    ~/.config/yamllint/config: .config/yamllint/config
+    ~/.config/yamllint/config: config/yamllint/config
 
     # zellij
-    ~/.config/zellij/config.kdl: .config/zellij/config.kdl
+    ~/.config/zellij/config.kdl: config/zellij/config.kdl
     
     # zsh
-    ~/.zshenv: .zshenv
-    ~/.config/zsh/.antibody_bundle: .config/zsh/antibody_bundle
-    ~/.config/zsh/.zlogin: .config/zsh/.zlogin
-    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
-    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+    ~/.zshenv: zshenv
+    ~/.config/zsh:
+      glob: true
+      path: config/zsh/*
 
     # bin
     ~/.local/bin: 
       glob: true
-      path: .local/bin/*
+      path: local/bin/*
