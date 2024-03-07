@@ -74,6 +74,9 @@
     # starship
     ~/.config/starship.toml: config/starship.toml
 
+    # tig
+    ~/.config/tig/config: config/tig/config
+    
     # yamllint
     ~/.config/yamllint/config: config/yamllint/config
 
