@@ -246,6 +246,10 @@ chars = "\u00029"
 key = "Key9"
 mods = "Command"
 
+[shell]
+program = "/opt/homebrew/bin/fish"
+args = ["--login"]
+
 [window]
 decorations = "buttonless"
 dynamic_padding = false

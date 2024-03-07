@@ -1,0 +1,1 @@
+set -gx PATH $(brew --prefix openssh)/bin $PATH
