@@ -63,9 +63,11 @@ brew 'zsh-completions'
 brew 'ant'
 brew 'go'
 brew 'gradle'
+brew 'kotlin'
 brew 'maven'
 brew 'python'
 brew 'rustup-init'
+brew 'scala'
 cask 'temurin'
 
 # gnupg related tools
