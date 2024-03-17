@@ -22,10 +22,10 @@
     ~/.config/bat/themes:
       glob: true
       path: scripts/.catppuccin/bat/*
-    
+
     # cargo
     ~/.config/cargo/config.toml: config/cargo/config.toml
-    
+
     # docker
     ~/.docker/config.json: docker/config.json
     ~/.docker/daemon.json: docker/daemon.json
@@ -52,9 +52,12 @@
       glob: true
       path: config/gnupg/*
 
+    # hammerspoon
+    ~/.hammerspoon/init.lua: hammerspoon/init.lua
+
     # hushlogin
     ~/.hushlogin: hushlogin
-    
+
     # inputrc
     ~/.inputrc: inputrc
 
@@ -62,7 +65,7 @@
     ~/.config/nvim:
       glob: true
       path: config/nvim/*
-    
+
     # rustup
     ~/.config/rustup/settings.toml: config/rustup/settings.toml
 
@@ -76,13 +79,13 @@
 
     # tig
     ~/.config/tig/config: config/tig/config
-    
+
     # yamllint
     ~/.config/yamllint/config: config/yamllint/config
 
     # zellij
     ~/.config/zellij/config.kdl: config/zellij/config.kdl
-    
+
     # zsh
     ~/.zshenv: zshenv
     ~/.config/zsh:
@@ -90,6 +93,6 @@
       path: config/zsh/*
 
     # bin
-    ~/.local/bin: 
+    ~/.local/bin:
       glob: true
       path: local/bin/*
