@@ -70,9 +70,9 @@
     ~/.config/rustup/settings.toml: config/rustup/settings.toml
 
     # ssh
-    ~/.config/ssh:
+    ~/.ssh:
       glob: true
-      path: config/ssh/*
+      path: ssh/*
 
     # starship
     ~/.config/starship.toml: config/starship.toml
