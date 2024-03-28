@@ -8,20 +8,18 @@
 
 - link:
     # alacritty
-    ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
-    ~/.config/alacritty/themes:
+    ~/.config/alacritty:
       glob: true
-      path: scripts/.catppuccin/alacritty/*
+      path: config/alacritty/*
 
     # azure
     # AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
     ~/.config/azure/config: config/azure/config
 
     # bat
-    ~/.config/bat/config: config/bat/config
-    ~/.config/bat/themes:
+    ~/.config/bat:
       glob: true
-      path: scripts/.catppuccin/bat/*
+      path: config/bat/*
 
     # cargo
     ~/.config/cargo/config.toml: config/cargo/config.toml
@@ -31,13 +29,9 @@
     ~/.docker/daemon.json: docker/daemon.json
 
      # fish
-    ~/.config/fish/config.fish: config/fish/config.fish
-    ~/.config/fish/conf.d:
+    ~/.config/fish:
       glob: true
-      path: config/fish/conf.d/*
-    ~/.config/fish/themes:
-      glob: true
-      path: scripts/.catppuccin/fish/themes/*
+      path: config/fish/*
 
     # git
     ~/.config/git:
@@ -48,9 +42,9 @@
     ~/.config/gh/config.yml: config/gh/config.yml
 
     # gnuppg
-    ~/.config/gnupg:
+    ~/.gnupg:
       glob: true
-      path: config/gnupg/*
+      path: gnupg/*
 
     # hammerspoon
     ~/.hammerspoon/init.lua: hammerspoon/init.lua
@@ -93,6 +87,6 @@
       path: config/zsh/*
 
     # bin
-    ~/.local/bin:
+    ~/bin:
       glob: true
-      path: local/bin/*
+      path: bin/*

@@ -1,13 +1,13 @@
 {
-	"auths": {
-		"https://index.docker.io/v1/": {}
-	},
-	"credsStore": "desktop",
-	"experimental": "enabled",
-	"currentContext": "desktop-linux",
-	"plugins": {
-		"-x-cli-hints": {
-			"enabled": "true"
-		}
-	}
+  "auths": {
+    "https://index.docker.io/v1/": {}
+  },
+  "credsStore": "osxkeychain",
+  "currentContext": "orbstack",
+  "experimental": "enabled",
+  "plugins": {
+    "-x-cli-hints": {
+      "enabled": "true"
+    }
+  }
 }
