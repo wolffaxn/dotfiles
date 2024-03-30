@@ -3,6 +3,7 @@
 #
 # Use `brew bundle install --file <Brewfile>` to install the formulas listed below.
 
+brew 'age'
 brew 'ansible'
 brew 'autoconf'
 brew 'automake'
@@ -63,6 +64,9 @@ brew 'watch'
 brew 'wget'
 brew 'zsh'
 brew 'zsh-completions'
+
+# dotfile manager
+brew 'chezmoi'
 
 # development
 brew 'ant'
