@@ -1,26 +1,20 @@
 # ~/.config/zsh/.zshrc
 
-#
-# sourced in interactive shells
-#
-
-# uncomment this and the last line for zprof info
-#zmodload zsh/zprof
-
-# Contains sensitive data which are not pushed to GitHub.
+# contains sensitive data which are not pushed to GitHub.
 [ -r $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
 
-export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
-
-#
-# Path configuration
-#
+if [ "$(arch)" = arm64 ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # ensure path arrays do not contain duplicates.
 typeset -gU path
-
 # set the list of directories that zsh searches for programs
 path=(
+  $HOME/.local/bin
+  $HOME/.bin
   /usr/local/bin
   /usr/bin
   /bin
@@ -28,18 +22,19 @@ path=(
   /sbin
   /usr/local/sbin
   /usr/local/opt/make/libexec/gnubin
-  $DOTFILES/bin
   $path
 )
-
 # export to sub-processes (make it inherited by child processes)
 export path
 
-#
-# Exports
-#
-
 export EDITOR="nvim"
+
+export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # set language and encoding
 export LANG=en_US.UTF-8
@@ -51,14 +46,11 @@ export LC_MONETARY=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
 export LC_TIME=en_US.UTF-8
 
-#
-# History
-#
-
 # command history configuration
-HISTFILE=$ZDOTDIR/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+export HISTFILE=$ZDOTDIR/.zsh_history
+export HIST_STAMPS="yyyy-mm-dd"
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 # allow multiple sessions to append to one zsh command history
 setopt append_history
@@ -81,32 +73,21 @@ setopt inc_append_history
 # share history between instances
 setopt share_history
 
-# gnupg
-export GNUPGHOME="${GNUPGHOME:-$HOME/.config/gnupg}"
-
 # rust
 export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$HOME/.config/rustup}"
 
-#
-# Prompt
-#
-
 # init starship cross-shell prompt
 eval "$(starship init zsh)"
 
-if command -v brew > /dev/null; then
+# homebrew completions
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if command -v brew &> /dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-# enable completion
-autoload -Uz compinit
-compinit
-
-autoload bashcompinit
-bashcompinit
-
-zmodload -i zsh/complist
+# load and initialize completion
+autoload -Uz compinit && compinit
 
 # use vim-like key bindings by default:
 bindkey -v
