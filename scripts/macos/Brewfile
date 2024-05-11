@@ -71,9 +71,6 @@ brew 'ykman'
 brew 'zsh'
 brew 'zsh-completions'
 
-# dotfile manager
-brew 'chezmoi'
-
 # development
 brew 'ant'
 brew 'go'
