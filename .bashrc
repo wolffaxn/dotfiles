@@ -29,5 +29,7 @@ alias ls='eza'
 
 eval "$(starship init bash)"
 
+eval "$(fzf --bash)"
+
 # shellcheck disable=SC1091
 source "/opt/homebrew/opt/asdf/libexec/asdf.sh"
