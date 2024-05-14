@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
-cd $(dirname ${BASH_SOURCE[0]})
+set -e
 
-function sync() {
-  rsync --exclude ".git/" \
-        --exclude ".github/" \
-        --exclude "scripts/" \
-        --exclude ".gitignore" \
-        --exclude "install.sh" \
-        --exclude "LICENSE" \
-        --exclude "README.md" \
-        -avh --no-perms . ~
-}
+CONFIG="scripts/install.conf.yaml"
+DOTBOT_DIR="dotbot"
 
-sync
-unset sync
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

@@ -1,0 +1,165 @@
+---
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/.config/alacritty'
+    - '~/.config/alacritty/themes'
+    - '~/.config/asdf'
+    - '~/.config/aws'
+    - '~/.config/azure'
+    - '~/.config/bat'
+    - '~/.config/cargo'
+    - '~/.config/fish'
+    - '~/.config/fish/conf.d'
+    - '~/.config/fish/functions'
+    - '~/.config/fish/themes'
+    - '~/.config/gh'
+    - '~/.config/git'
+    - '~/.config/httpie'
+    - '~/.config/karabiner'
+    - '~/.config/lazygit'
+    - '~/.config/nvim'
+    - '~/.config/nvim/lua'
+    - '~/.config/nvim/lua/config'
+    - '~/.config/nvim/lua/plugins'
+    - '~/.config/pip'
+    - '~/.config/rustup'
+    - '~/.config/tig'
+    - '~/.config/yamllint'
+    - '~/.config/zellij'
+    - '~/.config/zsh'
+    - '~/.docker'
+#    - '~/.gnupg'
+    - '~/.hammerspoon'
+    - '~/.local/bin'
+#    - '~/.ssh'
+    - '~/.ssh/config.d'
+
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- create:
+    - '~/.config'
+    - '~/.local/bin'
+
+- link:
+    # alacritty
+    ~/.config/alacritty/alacritty.toml: .config/alacritty/alacritty.toml
+    ~/.config/alacritty/themes:
+      path: .config/alacritty/themes/*.toml
+      glob: true
+
+    # asdf
+    ~/.config/asdf/asdfrc: .config/asdf/asdfrc
+
+    # aws
+    ~/.config/aws/config: .config/aws/config
+
+    # azure
+    ~/.config/azure/config: .config/azure/config
+
+    # bat
+    ~/.config/bat/config: .config/bat/config
+    ~/.config/bat/themes:
+      path: .config/bat/themes/*.tmTheme
+      glob: true
+
+    # cargo
+    ~/.config/cargo/config.toml: .config/cargo/config.toml
+
+    # fish
+    ~/.config/fish/config.fish: .config/fish/config.fish
+    ~/.config/fish/conf.d:
+      path: .config/fish/conf.d/*.fish
+      glob: true
+    ~/.config/fish/functions:
+      path: .config/fish/functions/*.fish
+      glob: true
+    ~/.config/fish/themes:
+      path: .config/fish/themes/*.theme
+      glob: true
+
+    # gh
+    ~/.config/gh/config.yml: .config/gh/config.yml
+
+    # git
+    ~/.config/git/attributes: .config/git/attributes
+    ~/.config/git/config: .config/git/config
+    ~/.config/git/config.local: .config/git/config.local
+    ~/.config/git/ignore: .config/git/ignore
+
+    # httpie
+    ~/.config/httpie/config.json: .config/httpie/config.json
+
+    # karabiner
+    ~/.config/karabiner/karabiner.json:
+      path: .config/karabiner/karabiner.json
+      if: "uname -s | grep --quiet --ignore-case darwin"
+
+    # lazygit
+    ~/.config/lazygit/config.yml: .config/lazygit/config.yml
+
+    # nvim
+
+    # pip
+    ~/.config/pip/pip.conf: .config/pip/pip.conf
+
+    # rustup
+    ~/.config/rustup/settings.toml: .config/rustup/settings.toml
+
+    # tig
+    ~/.config/tig/config: .config/tig/config
+
+    # yamllint
+    ~/.config/yamllint/config: .config/yamllint/config
+
+    # zellij
+    ~/.config/zellij/config.kdl: .config/zellij/config.kdl
+
+    # zsh
+    ~/.config/zsh/.zlogin: .config/zsh/.zlogin
+    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
+    ~/.config/zsh/.zshenv: .config/zsh/.zshenv
+    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+
+    # starship
+    ~/.config/starship.toml: .config/starship.toml
+
+    # docker
+    ~/.docker/config.json: .docker/config.json
+    ~/.docker/daemon.json: .docker/daemon.json
+
+    # gnupg
+    ~/.gnupg/gpg-agent.conf:
+      path: .gnupg/gpg-agent.conf
+      if: "uname -s | grep --quiet --ignore-case darwin"
+    ~/.gnupg/gpg.conf: .gnupg/gpg.conf
+    ~/.gnupg/scdaemon.conf: .gnupg/scdaemon.conf
+
+    # hammerspoon
+    ~/.hammerspoon/init.lua: .hammerspoon/init.lua
+
+    # local/bin
+    ~/.local/bin:
+      path: .local/bin/*
+      glob: true
+
+    # ssh
+    ~/.ssh/config: .ssh/config
+    ~/.ssh/config.d:
+      path: .ssh/config.d/*
+      glob: true
+
+    ~/.editorconfig: .editorconfig
+    ~/.hushlogin: .hushlogin
+    ~/.inputrc: .inputrc
+    ~/.ripgreprc: .ripgreprc
+    ~/.tool-version: .tool-version
+    ~/.zshenv: .zshenv
+
+- shell:
+    - [git submodule update --init --recursive]
+    - [git submodule update --remote]
