@@ -253,7 +253,7 @@ args = ["--login"]
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.8
+opacity = 1.0
 
 # Window padding (changes require restart)
 #
