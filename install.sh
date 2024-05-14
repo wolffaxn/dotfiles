@@ -7,6 +7,7 @@ DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTBOT_PATH="${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}"
 
 DOTBOT_FLAGS=()
 if [[ "${GITHUB_ACTIONS:-}" != "true" ]]; then
@@ -17,4 +18,4 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" "${DOTBOT_FLAGS[@]}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+"$DOTBOT_PATH" "${DOTBOT_FLAGS[@]}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
