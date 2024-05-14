@@ -23,4 +23,4 @@ jobs:
         with:
           python-version: ${{ matrix.python_version }}
       - name: Run install script
-        run: ./install --verbose
+        run: ./install.sh
