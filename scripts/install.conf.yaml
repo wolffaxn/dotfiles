@@ -103,6 +103,13 @@
     ~/.config/lazygit/config.yml: .config/lazygit/config.yml
 
     # nvim
+    ~/.config/nvim/init.lua: .config/nvim/init.lua
+    ~/.config/nvim/lua/config:
+      path: .config/nvim/lua/config/*.lua
+      glob: true
+    ~/.config/nvim/lua/plugins:
+      path: .config/nvim/lua/plugins/*.lua
+      glob: true
 
     # pip
     ~/.config/pip/pip.conf: .config/pip/pip.conf
