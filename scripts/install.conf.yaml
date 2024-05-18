@@ -102,6 +102,9 @@
     # lazygit
     ~/.config/lazygit/config.yml: .config/lazygit/config.yml
 
+    # lf
+    ~/.config/lf/lfrc: .config/lf/lfrc
+
     # nvim
     ~/.config/nvim/init.lua: .config/nvim/init.lua
     ~/.config/nvim/lua/config:
