@@ -17,9 +17,12 @@ indent_size = 2
 [Makefile]
 indent_style = tab
 
-[*.md]
+[*.{md,markdown}]
 indent_size = 2
 trim_trailing_whitespace = false
+
+[*.nix]
+indent_size = 2
 
 [*.{sh,fish,zsh}]
 indent_size = 2
