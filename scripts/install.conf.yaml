@@ -146,6 +146,7 @@
     ~/.docker/daemon.json: .docker/daemon.json
 
     # gnupg
+    ~/.gnupg/dirmngr.conf: .gnupg/dirmngr.conf
     ~/.gnupg/gpg-agent.conf:
       path: .gnupg/gpg-agent.conf
       if: "uname -s | grep --quiet --ignore-case darwin"
