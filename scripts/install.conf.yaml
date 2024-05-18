@@ -123,6 +123,9 @@
     # tig
     ~/.config/tig/config: .config/tig/config
 
+    # wezterm
+    ~/.config/wezterm/wezterm.lua: .config/wezterm/wezterm.lua
+
     # yamllint
     ~/.config/yamllint/config: .config/yamllint/config
 
