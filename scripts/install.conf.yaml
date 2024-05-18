@@ -91,6 +91,9 @@
     ~/.config/git/config.local: .config/git/config.local
     ~/.config/git/ignore: .config/git/ignore
 
+    # htop
+    ~/.config/htop/htoprc: .config/htop/htoprc
+
     # httpie
     ~/.config/httpie/config.json: .config/httpie/config.json
 
