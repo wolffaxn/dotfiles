@@ -71,7 +71,6 @@ brew 'tailscale'
 brew 'terraform'
 brew 'terragrunt'
 brew 'tig'
-brew 'tmux'
 brew 'tree'
 brew 'watch'
 brew 'wget'
@@ -101,6 +100,11 @@ brew 'zig'
 brew 'gnupg'
 brew 'hopenpgp-tools'
 brew 'ykman'
+
+# tmux related tools
+brew 'tmux'
+brew 'tpm'
+brew 'arl/arl/gitmux'
 
 # macos apps
 cask_args appdir: '/Applications'

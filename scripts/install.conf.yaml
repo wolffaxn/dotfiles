@@ -126,6 +126,10 @@
     # tig
     ~/.config/tig/config: .config/tig/config
 
+    # tmux
+    ~/.config/tmux/gitmux.yml: .config/tmux/gitmux.yml
+    ~/.config/tmux/tmux.conf: .config/tmux/tmux.conf
+
     # wezterm
     ~/.config/wezterm/wezterm.lua: .config/wezterm/wezterm.lua
 
