@@ -8,18 +8,21 @@ right_format = """$time"""
 
 palette = "catppuccin_mocha"
 
+[character]
+success_symbol = "[❯](#50fa7b)"
+
 [os]
-format = '[$symbol](#50fa7b) '
+format = "[$symbol](#50fa7b) "
 disabled = false
 
 [os.symbols]
-Arch = '󰣇'
+Arch = "󰣇"
 Debian = " "
 FreeBSD = " "
-Macos = '󰀵'
+Macos = "󰀵"
 NixOS = " "
-Ubuntu = ''
-Windows = ' '
+Ubuntu = "'"
+Windows = " "
 
 [username]
 format = "[$user]($style)"
@@ -35,14 +38,14 @@ disabled = true
 
 # Shows current directory
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style) '
+format = "[$path]($style)[$read_only]($read_only_style) "
 style = "#50fa7b"
 read_only_style = "#ff5555"
 read_only = "  "
 disabled = false
 
 [time]
-format = '[󱑎 $time]($style) '
+format = "[󱑎 $time]($style) "
 style = "bright-black"
 disabled = false
 
