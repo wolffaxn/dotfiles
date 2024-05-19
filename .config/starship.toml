@@ -40,6 +40,6 @@ read_only = "  "
 disabled = false
 
 [time]
-disabled = false
 format = '[󱑎 $time]($style) '
 style = "bright-black"
+disabled = false
