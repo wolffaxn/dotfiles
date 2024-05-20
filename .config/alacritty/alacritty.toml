@@ -38,7 +38,7 @@ style = "Italic"
 
 [shell]
 program = "/opt/homebrew/bin/fish"
-args = ["--login"]
+args = ["-l", "-c", "tmux new-session -A -s '#H'"]
 
 [window]
 decorations = "buttonless"

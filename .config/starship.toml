@@ -3,13 +3,25 @@
 add_newline = false
 command_timeout = 2000
 
-format = """$os$username$hostname$kubernetes$directory$character"""
+format = """$os$username$hostname$directory$character"""
 right_format = """$time"""
 
 palette = "catppuccin_mocha"
 
 [character]
 success_symbol = "[❯](#50fa7b)"
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "#50fa7b"
+read_only_style = "#ff5555"
+read_only = "  "
+disabled = false
+
+[hostname]
+format = "[@$hostname](#50fa7b) "
+ssh_only = false
+disabled = true
 
 [os]
 format = "[$symbol](#50fa7b) "
@@ -24,29 +36,16 @@ NixOS = " "
 Ubuntu = "'"
 Windows = " "
 
+[time]
+format = "[󱑎 $time]($style) "
+style = "bright-black"
+disabled = false
+
 [username]
 format = "[$user]($style)"
 style_user = "#50fa7b"
 style_root = "#ff5555"
 show_always = true
-disabled = true
-
-[hostname]
-format = "[@$hostname](#50fa7b) "
-ssh_only = false
-disabled = true
-
-# Shows current directory
-[directory]
-format = "[$path]($style)[$read_only]($read_only_style) "
-style = "#50fa7b"
-read_only_style = "#ff5555"
-read_only = "  "
-disabled = true
-
-[time]
-format = "[󱑎 $time]($style) "
-style = "bright-black"
 disabled = true
 
 [palettes.catppuccin_frappe]
