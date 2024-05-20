@@ -178,7 +178,7 @@
     ~/.hushlogin: .hushlogin
     ~/.inputrc: .inputrc
     ~/.ripgreprc: .ripgreprc
-    ~/.tool-version: .tool-version
+    ~/.tool-versions: .tool-versions
     ~/.zshenv: .zshenv
 
 - shell:

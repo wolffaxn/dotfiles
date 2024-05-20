@@ -1,5 +1,6 @@
-set -gx GOPATH "$HOME/.go"
-set -gx GOROOT (brew --prefix golang)"/libexec"
+# set GOPATH & GOROOT
+#set -gx GOPATH "$HOME/.go"
+#set -gx GOROOT (brew --prefix golang)"/libexec"
+source $HOME/.asdf/plugins/golang/set-env.fish
+
 set -gx PATH $PATH $GOPATH/bin $GOROOT/bin
-test -d "$GOPATH" || mkdir "$GOPATH"
-test -d "$GOPATH/src/github.com" || mkdir -p "$GOPATH/src/github.com"

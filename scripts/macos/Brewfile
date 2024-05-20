@@ -82,19 +82,21 @@ brew 'zsh-completions'
 # development
 brew 'ant'
 brew 'delve'
-brew 'go'
 brew 'gopls'
 brew 'gradle'
-brew 'kotlin'
 brew 'lua'
 brew 'maven'
-brew 'python'
-brew 'ruby'
 brew 'rustup-init'
-brew 'scala'
 brew 'sccache'
-cask 'temurin'
 brew 'zig'
+
+# dev tools installed with asdf
+#brew 'go'
+#brew 'kotlin'
+#brew 'python'
+#brew 'ruby'
+#brew 'scala'
+#cask 'temurin'
 
 # gnupg related tools
 brew 'gnupg'
