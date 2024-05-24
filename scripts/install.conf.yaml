@@ -105,9 +105,6 @@
     # lazygit
     ~/.config/lazygit/config.yml: .config/lazygit/config.yml
 
-    # lf
-    ~/.config/lf/lfrc: .config/lf/lfrc
-
     # nvim
     ~/.config/nvim/init.lua: .config/nvim/init.lua
     ~/.config/nvim/lua/config:
@@ -135,6 +132,11 @@
 
     # yamllint
     ~/.config/yamllint/config: .config/yamllint/config
+
+    # yazi
+    ~/.config/yazi/yazi.toml: .config/yazi/yazi.toml
+    ~/.config/yazi/theme.toml: .config/yazi/theme.toml
+    ~/.config/yazi/flavors/catppuccin-mocha.yazi/flavor.toml: .config/yazi/flavors/catppuccin-mocha.yazi/flavor.toml
 
     # zellij
     ~/.config/zellij/config.kdl: .config/zellij/config.kdl
