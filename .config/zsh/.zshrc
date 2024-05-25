@@ -68,5 +68,6 @@ if type brew &>/dev/null; then
     source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 fi
 source $ZDOTDIR/function.zsh
+eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --hook pwd)"

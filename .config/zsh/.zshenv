@@ -27,6 +27,9 @@ export LC_TIME=en_US.UTF-8
 # asdf
 export ASDF_CONFIG_FILE="${ASDF_CONFIG_FILE:=-$HOME/.config/asdf/asdfrc}"
 
+# aws
+export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:=-$HOME/.config/aws/config}"
+
 # bat
 export BAT_THEME="Catppuccin-mocha"
 
