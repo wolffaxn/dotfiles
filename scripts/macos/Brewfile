@@ -80,8 +80,6 @@ brew 'wget'
 brew 'yazi'
 brew 'ykman'
 brew 'zoxide'
-brew 'zsh'
-brew 'zsh-completions'
 
 # development
 brew 'ant'
@@ -111,6 +109,14 @@ brew 'ykman'
 brew 'tmux'
 brew 'tpm'
 brew 'arl/arl/gitmux'
+
+# zsh
+brew 'zsh'
+brew 'zsh-autosuggestions'
+brew 'zsh-completions'
+brew 'zsh-history-substring-search'
+brew 'zsh-syntax-highlighting'
+brew 'zsh-fast-syntax-highlighting'
 
 # macos apps
 cask_args appdir: '/Applications'

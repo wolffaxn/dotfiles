@@ -150,10 +150,10 @@
     ~/.config/zellij/config.kdl: .config/zellij/config.kdl
 
     # zsh
-    ~/.config/zsh/.zlogin: .config/zsh/.zlogin
-    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
     ~/.config/zsh/.zshenv: .config/zsh/.zshenv
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+    ~/.config/zsh/function.zsh: .config/zsh/function.zsh
+    ~/.zshenv: .zshenv
 
     # starship
     ~/.config/starship.toml: .config/starship.toml
@@ -186,7 +186,6 @@
     ~/.inputrc: .inputrc
     ~/.ripgreprc: .ripgreprc
     ~/.tool-versions: .tool-versions
-    ~/.zshenv: .zshenv
 
 - shell:
     - [git submodule update --init --recursive]
