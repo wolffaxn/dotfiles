@@ -15,6 +15,7 @@
     - '~/.config/fish/themes'
     - '~/.config/gh'
     - '~/.config/git'
+    - '~/.config/hammerspoon'
     - '~/.config/httpie'
     - '~/.config/karabiner'
     - '~/.config/lazygit'
@@ -25,12 +26,14 @@
     - '~/.config/pip'
     - '~/.config/rustup'
     - '~/.config/tig'
+    - '~/.config/tmux'
+    - '~/.config/wezterm'
     - '~/.config/yamllint'
+    - '~/.config/yazi'
     - '~/.config/zellij'
     - '~/.config/zsh'
     - '~/.docker'
 #    - '~/.gnupg'
-    - '~/.hammerspoon'
     - '~/.local/bin'
 #    - '~/.ssh'
     - '~/.ssh/config.d'
@@ -90,6 +93,11 @@
     ~/.config/git/config: .config/git/config
     ~/.config/git/config.local: .config/git/config.local
     ~/.config/git/ignore: .config/git/ignore
+
+    # hammerspoon
+    ~/.config/hammerspoon/init.lua:
+      path: .config/hammerspoon/init.lua
+      if: "uname -s | grep --quiet --ignore-case darwin"
 
     # htop
     ~/.config/htop/htoprc: .config/htop/htoprc
@@ -161,9 +169,6 @@
       if: "uname -s | grep --quiet --ignore-case darwin"
     ~/.gnupg/gpg.conf: .gnupg/gpg.conf
     ~/.gnupg/scdaemon.conf: .gnupg/scdaemon.conf
-
-    # hammerspoon
-    ~/.hammerspoon/init.lua: .hammerspoon/init.lua
 
     # local/bin
     ~/.local/bin:
