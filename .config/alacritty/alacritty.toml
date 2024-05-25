@@ -14,6 +14,7 @@ TERM = "xterm-256color"
 
 # Point size of the font
 [font]
+builtin_box_drawing = true
 size = 16.0
 
 # Normal (roman) font face
@@ -36,14 +37,28 @@ style = "Bold Italic"
 family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[mouse]
+hide_when_typing = true
+
 [shell]
 program = "/opt/homebrew/bin/fish"
 args = ["-l", "-c", "tmux new-session -A -s '#H'"]
 
 [window]
+blur = true
 decorations = "buttonless"
 dynamic_padding = false
-#opacity = 0.8
+opacity = 0.8
 
 # Window padding (changes require restart)
 #
