@@ -1,3 +1,14 @@
+-- reload config automatically
+local configFileWatcher
+function reloadConfig()
+    configFileWatcher:stop()
+    configFileWatcher = nil
+    hs.reload()
+end
+
+configFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.config/hammerspoon/", reloadConfig)
+configFileWatcher:start()
+
 local hotkey = require("hs.hotkey")
 
 -- hyper key
