@@ -24,6 +24,7 @@
     - '~/.config/nvim/lua/config'
     - '~/.config/nvim/lua/plugins'
     - '~/.config/pip'
+    - '~/.config/ripgrep'
     - '~/.config/rustup'
     - '~/.config/tig'
     - '~/.config/tmux'
@@ -125,6 +126,9 @@
     # pip
     ~/.config/pip/pip.conf: .config/pip/pip.conf
 
+    # ripgrep
+    ~/.config/ripgrep/ripgreprc: .config/ripgrep/ripgreprc
+
     # rustup
     ~/.config/rustup/settings.toml: .config/rustup/settings.toml
 
@@ -184,7 +188,6 @@
     ~/.editorconfig: .editorconfig
     ~/.hushlogin: .hushlogin
     ~/.inputrc: .inputrc
-    ~/.ripgreprc: .ripgreprc
     ~/.tool-versions: .tool-versions
 
 - shell:

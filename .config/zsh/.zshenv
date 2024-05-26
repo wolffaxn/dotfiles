@@ -46,6 +46,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # disable annoying hits
 export HOMEBREW_NO_ENV_HINTS=1
 
+# ripgrep
+export RIPGREP_CONFIG_PATH="${RIPGREP_CONFIG_PATH:-$HOME/.config/ripgrep/ripgreprc}"
+
 # rust
 export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$HOME/.config/rustup}"
