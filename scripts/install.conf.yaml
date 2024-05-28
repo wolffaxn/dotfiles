@@ -76,6 +76,9 @@
 
     # fish
     ~/.config/fish/config.fish: .config/fish/config.fish
+    ~/.config/fish/completions:
+      path: .config/fish/completions/*.fish
+      glob: true
     ~/.config/fish/conf.d:
       path: .config/fish/conf.d/*.fish
       glob: true
