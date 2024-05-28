@@ -8,7 +8,7 @@ typeset -gU path
 # set the list of directories that zsh searches for programs
 path=(
   $HOME/.local/bin
-  $HOME/.cargo/bin
+  $CARGO_HOME/cargo/bin
   $HOME/go/bin
   $path
 )
