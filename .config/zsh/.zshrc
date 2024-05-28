@@ -15,6 +15,12 @@ path=(
 # export to sub-processes (make it inherited by child processes)
 export path
 
+fpath=(
+  $HOME/.local/share/zsh/site-functions
+  $fpath
+)
+export fpath
+
 # allow multiple sessions to append to one zsh command history
 setopt append_history
 # Save each command’s beginning timestamp and the duration to the history file

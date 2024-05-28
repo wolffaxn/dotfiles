@@ -36,6 +36,7 @@
     - '~/.docker'
 #    - '~/.gnupg'
     - '~/.local/bin'
+    - '~/.local/share/zsh/site-functions'
 #    - '~/.ssh'
     - '~/.ssh/config.d'
 
@@ -48,6 +49,7 @@
 - create:
     - '~/.config'
     - '~/.local/bin'
+    - '~/.local/share/zsh/site-functions'
 
 - link:
     # alacritty
@@ -161,6 +163,9 @@
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
     ~/.config/zsh/function.zsh: .config/zsh/function.zsh
     ~/.zshenv: .zshenv
+    ~/.local/share/zsh/site-functions:
+      path: .config/zsh/site-functions/_*
+      glob: true
 
     # starship
     ~/.config/starship.toml: .config/starship.toml
