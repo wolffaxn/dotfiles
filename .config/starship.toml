@@ -1,15 +1,46 @@
 # ~/.config/starship.toml
 
-add_newline = false
+add_newline = true
 command_timeout = 2000
 
 format = """$os$username$hostname$directory$character"""
-right_format = """$time"""
+right_format = """$git_branch$golang$java$kotlin$python$rust$nix_shell$time"""
 
 palette = "catppuccin_mocha"
 
-[character]
-success_symbol = "[❯](#50fa7b)"
+[os]
+format = "[$symbol](#50fa7b) "
+disabled = false
+
+[os.symbols]
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Arch = "󰣇"
+Debian = " "
+FreeBSD = " "
+Kali = " "
+Macos = "󰀵"
+NixOS = " "
+OpenBSD = "󰈺 "
+RockyLinux = " "
+Ubuntu = "'"
+Unknown = " "
+Void = " "
+Windows = " "
+
+[username]
+format = "[$user]($style)"
+style_user = "#50fa7b"
+style_root = "#ff5555"
+show_always = true
+disabled = true
+
+[hostname]
+format = "[@$hostname](#50fa7b) "
+ssh_only = false
+ssh_symbol = " "
+disabled = true
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style) "
@@ -18,35 +49,35 @@ read_only_style = "#ff5555"
 read_only = "  "
 disabled = false
 
-[hostname]
-format = "[@$hostname](#50fa7b) "
-ssh_only = false
+[character]
+success_symbol = "[❯](#50fa7b)"
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch) ]($style)"
 disabled = true
 
-[os]
-format = "[$symbol](#50fa7b) "
-disabled = true
+[golang]
+symbol = " "
 
-[os.symbols]
-Arch = "󰣇"
-Debian = " "
-FreeBSD = " "
-Macos = "󰀵"
-NixOS = " "
-Ubuntu = "'"
-Windows = " "
+[java]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+disabled = true
 
 [time]
-format = "[󱑎 $time]($style) "
-style = "bright-black"
+format = "[󱑎 $time]($style)"
 disabled = false
-
-[username]
-format = "[$user]($style)"
-style_user = "#50fa7b"
-style_root = "#ff5555"
-show_always = true
-disabled = true
 
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"
