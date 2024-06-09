@@ -4,7 +4,7 @@ add_newline = true
 command_timeout = 2000
 
 format = """$os$username$hostname$directory$character"""
-right_format = """$git_branch$golang$java$kotlin$python$rust$nix_shell$time"""
+right_format = """$git_branch$nix_shell$golang$java$kotlin$python$rust$time"""
 
 palette = "catppuccin_mocha"
 
@@ -56,6 +56,10 @@ success_symbol = "[❯](#50fa7b)"
 format = "[$symbol$branch(:$remote_branch) ]($style)"
 disabled = true
 
+[nix_shell]
+symbol = " "
+disabled = false
+
 [golang]
 symbol = " "
 
@@ -70,10 +74,6 @@ symbol = " "
 
 [rust]
 symbol = " "
-
-[nix_shell]
-symbol = " "
-disabled = true
 
 [time]
 format = "[󱑎 $time]($style)"
