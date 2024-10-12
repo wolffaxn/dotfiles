@@ -37,7 +37,7 @@ export BAT_THEME="Catppuccin-mocha"
 export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 # gnupg
-export GPG_TTY="(tty)"
+export GPG_TTY="$(tty)"
 
 # disable analytics
 export HOMEBREW_NO_ANALYTICS=1
