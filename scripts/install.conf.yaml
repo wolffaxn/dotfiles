@@ -141,8 +141,10 @@
     ~/.config/tig/config: .config/tig/config
 
     # tmux
-    ~/.config/tmux/gitmux.yml: .config/tmux/gitmux.yml
     ~/.config/tmux/tmux.conf: .config/tmux/tmux.conf
+    ~/.config/tmux/plugins/tpm:
+      path: .config/tmux/plugins/tpm/*
+      glob: true
 
     # wezterm
     ~/.config/wezterm/wezterm.lua: .config/wezterm/wezterm.lua
@@ -159,13 +161,11 @@
     ~/.config/zellij/config.kdl: .config/zellij/config.kdl
 
     # zsh
-    ~/.config/zsh/.zshenv: .config/zsh/.zshenv
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+    ~/.config/zsh/aliases.zsh: .config/zsh/aliases.zsh
     ~/.config/zsh/function.zsh: .config/zsh/function.zsh
+    ~/.config/zsh/plugins.zsh: .config/zsh/plugins.zsh
     ~/.zshenv: .zshenv
-    ~/.local/share/zsh/site-functions:
-      path: .config/zsh/site-functions/_*
-      glob: true
 
     # starship
     ~/.config/starship.toml: .config/starship.toml

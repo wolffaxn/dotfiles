@@ -59,7 +59,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [shell]
 program = "/opt/homebrew/bin/fish"
-args = ["-l", "-c", "tmux new-session -A -s '#H'"]
+args = ["-l", "-c", "tmux new-session -A -s mac"]
 
 [window]
 blur = true

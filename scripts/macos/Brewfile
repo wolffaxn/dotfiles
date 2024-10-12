@@ -94,12 +94,12 @@ brew 'sccache'
 brew 'zig'
 
 # dev tools installed with asdf
-#brew 'go'
-#brew 'kotlin'
-#brew 'python'
-#brew 'ruby'
-#brew 'scala'
-#cask 'temurin'
+# brew 'go'
+# brew 'kotlin'
+# brew 'python'
+# brew 'ruby'
+# brew 'scala'
+# cask 'temurin'
 
 # gnupg related tools
 brew 'gnupg'
@@ -108,16 +108,14 @@ brew 'ykman'
 
 # tmux related tools
 brew 'tmux'
-brew 'tpm'
-brew 'arl/arl/gitmux'
 
 # zsh
 brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-history-substring-search'
-brew 'zsh-syntax-highlighting'
-brew 'zsh-fast-syntax-highlighting'
+# brew 'zsh-autosuggestions'
+# brew 'zsh-completions'
+# brew 'zsh-history-substring-search'
+# brew 'zsh-syntax-highlighting'
+# brew 'zsh-fast-syntax-highlighting'
 
 # macos apps
 cask_args appdir: '/Applications'
