@@ -118,8 +118,8 @@ brew 'zsh'
 
 # macos apps
 cask_args appdir: '/Applications'
+cask 'nikitabobko/tap/aerospace'
 cask 'alacritty'
-cask 'amethyst'
 cask 'brave-browser'
 cask 'discord'
 cask 'hammerspoon'
