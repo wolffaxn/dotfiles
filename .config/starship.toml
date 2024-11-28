@@ -1,84 +1,106 @@
 # ~/.config/starship.toml
 
+palette = "catppuccin_mocha"
+
 add_newline = true
 command_timeout = 2000
 
-format = """$os$username$hostname$directory$character"""
-right_format = """$git_branch$nix_shell$golang$java$kotlin$python$rust$time"""
+format = """
+$os\
+$username\
+$hostname\
+$kubernetes\
+$directory\
+$git_branch\
+$cmd_duration\
+$line_break$character"""
 
-palette = "catppuccin_mocha"
+[character]
+success_symbol = "[❯](text)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+vimcmd_replace_one_symbol = "[❮](purple)"
+vimcmd_replace_symbol = "[❮](purple)"
+vimcmd_visual_symbol = "[❮](lavender)"
+
+[cmd_duration]
+disabled = false
+format = "took [$duration ]($style)"
+style = "pink"
+min_time = 500
+min_time_to_notify = 1000
+show_milliseconds = true
+show_notifications = false
+
+[directory]
+disabled = false
+format = "at [$path]($style)[$read_only]($read_only_style) "
+style = "lavender"
+home_symbol = "󰋜 ~"
+read_only_style = "red"
+read_only = "  "
+truncate_to_repo = false
+
+[git_branch]
+disabled = false
+format = "via [$symbol$branch]($style) "
+style = "mauve"
+symbol = " "
+
+[hostname]
+disabled = false
+format = "$ssh_symbol[@$hostname](lavender) "
+ssh_only = false
+ssh_symbol = " "
 
 [os]
 disabled = false
-format = "[$symbol](#50fa7b) "
+format = "[$symbol](lavender) "
 
 [os.symbols]
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
 Arch = "󰣇"
 Debian = " "
 FreeBSD = " "
-Kali = " "
 Macos = "󰀵"
 NixOS = " "
-OpenBSD = "󰈺 "
-RockyLinux = " "
 Ubuntu = "'"
 Unknown = " "
-Void = " "
 Windows = " "
 
 [username]
 disabled = false
 format = "[$user]($style)"
-style_user = "#50fa7b"
-style_root = "#ff5555"
+style_user = "lavender"
+style_root = "bold red"
 show_always = true
 
-[hostname]
-disabled = false
-format = "[@$hostname](#50fa7b) "
-ssh_only = false
-ssh_symbol = " "
-
-[directory]
-disabled = false
-format = "[$path]($style)[$read_only]($read_only_style) "
-style = "#50fa7b"
-read_only_style = "#ff5555"
-read_only = "  "
-
-[character]
-success_symbol = "[❯](#50fa7b)"
-
-[git_branch]
-disabled = true
-format = "[$symbol$branch(:$remote_branch) ]($style)"
-
-[nix_shell]
-symbol = " "
-disabled = false
-
 [golang]
+disabled = false
 symbol = " "
 
 [java]
+disabled = false
 symbol = " "
 
 [kotlin]
+disabled = false
 symbol = " "
 
+[kubernetes]
+disabled = false
+format = "via [󱃾 $context($namespace)] "
+
+[nix_shell]
+disabled = false
+symbol = " "
+
 [python]
-symbol = " "
+disabled = false
+symbol = " "
 
 [rust]
+disabled = false
 symbol = " "
-
-[time]
-disabled = true
-format = "[󱑎 $time]($style)"
-style = "bright-black"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
