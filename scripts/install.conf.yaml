@@ -137,9 +137,6 @@
     # rustup
     ~/.config/rustup/settings.toml: .config/rustup/settings.toml
 
-    # tig
-    ~/.config/tig/config: .config/tig/config
-
     # tmux
     ~/.config/tmux/tmux.conf: .config/tmux/tmux.conf
     ~/.config/tmux/plugins/tpm:
