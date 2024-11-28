@@ -27,8 +27,8 @@ vimcmd_visual_symbol = "[❮](lavender)"
 disabled = false
 format = "took [$duration ]($style)"
 style = "pink"
-min_time = 500
-min_time_to_notify = 1000
+min_time = 10000
+min_time_to_notify = 10000
 show_milliseconds = true
 show_notifications = false
 
