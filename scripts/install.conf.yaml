@@ -143,9 +143,6 @@
       path: .config/tmux/plugins/tpm/*
       glob: true
 
-    # wezterm
-    ~/.config/wezterm/wezterm.lua: .config/wezterm/wezterm.lua
-
     # yamllint
     ~/.config/yamllint/config: .config/yamllint/config
 
