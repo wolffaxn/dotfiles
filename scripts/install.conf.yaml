@@ -2,6 +2,7 @@
 - clean:
     - '~'
     - '~/.config'
+    - '~/.config/aerospace'
     - '~/.config/alacritty'
     - '~/.config/alacritty/themes'
     - '~/.config/asdf'
@@ -50,6 +51,9 @@
     - '~/.local/share/zsh/site-functions'
 
 - link:
+    # aerospace
+    ~/.config/aerospace/aerospace.toml: .config/aerospace/aerospace.toml
+
     # alacritty
     ~/.config/alacritty/alacritty.toml: .config/alacritty/alacritty.toml
     ~/.config/alacritty/themes:
