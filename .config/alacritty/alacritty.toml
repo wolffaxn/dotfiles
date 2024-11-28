@@ -1,5 +1,6 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
+[general]
 # Live config reload (changes require restart)
 import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
 live_config_reload = true
@@ -57,7 +58,7 @@ hide_when_typing = true
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[shell]
+[terminal.shell]
 program = "/opt/homebrew/bin/fish"
 args = ["-l", "-c", "tmux new-session -A -s mac"]
 
