@@ -15,6 +15,7 @@
     - '~/.config/fish/functions'
     - '~/.config/fish/themes'
     - '~/.config/gh'
+    - '~/.config/ghostty'
     - '~/.config/git'
     - '~/.config/hammerspoon'
     - '~/.config/httpie'
@@ -95,6 +96,9 @@
 
     # gh
     ~/.config/gh/config.yml: .config/gh/config.yml
+
+    # ghostty
+    ~/.config/ghostty/config: .config/ghostty/config
 
     # git
     ~/.config/git/attributes: .config/git/attributes

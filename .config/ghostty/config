@@ -1,0 +1,22 @@
+# docs:
+# ghostty +show-config --default --docs | nvim
+
+# ghostty +list-themes
+theme = catppuccin-mocha
+
+# ghostty +list-fonts
+font-family = JetBrains Mono
+font-size = 16
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = left
+
+background-blur-radius = 20
+background-opacity = 0.95
+
+window-decoration = true
+
+# shell
+initial-command = /opt/homebrew/bin/fish -l -c tmux attach || tmux new-session -A -s mac
+shell-integration = fish
