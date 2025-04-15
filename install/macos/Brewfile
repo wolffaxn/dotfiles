@@ -55,7 +55,8 @@ brew 'nvim'
 brew 'nvtop'
 brew 'openssl@3'
 brew 'opentofu'
-brew 'packer'
+# disabled because it will change its license to BUSL on the next release
+#brew 'packer'
 brew 'pandoc'
 brew 'pgcli'
 brew 'plantuml'
@@ -104,6 +105,8 @@ brew 'zig'
 brew 'gnupg'
 brew 'hopenpgp-tools'
 brew 'ykman'
+brew 'keychain'
+brew 'openssh'
 
 # tmux related tools
 brew 'tmux'
