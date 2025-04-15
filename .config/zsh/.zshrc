@@ -3,14 +3,6 @@
 # contains sensitive data which are not pushed to GitHub.
 [ -f "$ZDOTDIR/.zshrc.local" ] && source "$ZDOTDIR/.zshrc.local"
 
-if type brew &>/dev/null; then
-    if [ "$(arch)" = arm64 ]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        eval "$(/usr/local/bin/brew shellenv)"
-    fi
-fi
-
 # set XDG Base Directory Specification
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -107,7 +99,6 @@ setopt inc_append_history
 # share history between instances
 setopt share_history
 
-source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/function.zsh"
 
