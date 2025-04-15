@@ -22,7 +22,6 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export ASDF_CONFIG_FILE="${ASDF_CONFIG_FILE:=-$HOME/.config/asdf/asdfrc}"
 export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:=-$HOME/.config/aws/config}"
 export BAT_THEME="Catppuccin-mocha"
 export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
