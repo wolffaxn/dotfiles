@@ -1,3 +1,5 @@
+# ~/.config/zsh/function.zsh
+
 function flush-dns() {
   sudo killall -HUP mDNSResponder
 }
