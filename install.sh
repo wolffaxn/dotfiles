@@ -15,6 +15,9 @@ if [ $(uname) == "Darwin" ]; then
 
   echo "Updating defaults"
   source install/macos/defaults.sh
+
+  echo "Rearrange dock"
+  source install/macos/dock.sh
 fi
 
 echo "Symlink dotfiles"
