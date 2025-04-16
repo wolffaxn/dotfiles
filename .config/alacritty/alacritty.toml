@@ -3,7 +3,7 @@
 [general]
 # Live config reload (changes require restart)
 import = [
-    "~/.config/alacritty/themes/catppuccin-mocha.toml"
+    "~/.config/alacritty/themes/gruvbox_dark.toml"
 ]
 live_config_reload = true
 
@@ -69,7 +69,7 @@ blur = true
 #decorations = "buttonless"
 decorations = "full"
 dynamic_padding = false
-opacity = 0.8
+opacity = 1.0
 
 # Window padding (changes require restart)
 #
