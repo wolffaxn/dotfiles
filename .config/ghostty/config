@@ -2,7 +2,7 @@
 # ghostty +show-config --default --docs | nvim
 
 # ghostty +list-themes
-theme = catppuccin-mocha
+theme = GruvboxDark
 
 # ghostty +list-fonts
 font-family = JetBrains Mono
@@ -13,7 +13,7 @@ macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = left
 
 background-blur-radius = 20
-background-opacity = 0.95
+background-opacity = 1.0
 
 window-decoration = true
 
