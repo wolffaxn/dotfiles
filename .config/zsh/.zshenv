@@ -1,6 +1,6 @@
 # ~/.config/zsh/.zshenv
 
-if [[ ! -o LOGIN $$ -s "${ZDOTDIR:-$HOME}/.zprofile" ]]: then
+if [[ ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
@@ -48,6 +48,9 @@ export FZF_ALT_C_COMMAND="fd --type d . --color=never"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 export GIT_EDITOR="nvim"
+
+# gnupg
+export GNUPGHOME=~/.gnupg
 export GPG_TTY="$(tty)"
 
 # disable analytics
