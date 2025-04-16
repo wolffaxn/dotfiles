@@ -3,5 +3,6 @@ git_protocol: ssh
 pager: less
 prompt: enabled
 aliases:
-  clone: repo clone
-  co: pr checkout
+    clone: repo clone
+    co: pr checkout
+version: "1"
