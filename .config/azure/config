@@ -8,7 +8,7 @@ first_run = yes
 output = table
 
 [defaults]
-location = westeurope
+location = germanywestcentral
 
 [logging]
 enable_log_file = yes
