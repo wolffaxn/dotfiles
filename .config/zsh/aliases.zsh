@@ -1,4 +1,4 @@
-# aliases
+# ~/.config/zsh/aliases.zsh
 
 alias ..="cd .."
 alias ...="cd ../../"

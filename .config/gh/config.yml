@@ -1,7 +1,11 @@
+version: "1"
+aliases:
+    clone: repo clone
+    co: pr checkout
+    pr: pr create --web
+    pv: pr view --web
+    v: repo view --web
 editor: nvim
 git_protocol: ssh
 pager: less
 prompt: enabled
-aliases:
-  clone: repo clone
-  co: pr checkout

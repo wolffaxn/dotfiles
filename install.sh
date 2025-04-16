@@ -2,20 +2,25 @@
 
 set -e
 
-CONFIG="scripts/install.conf.yaml"
-DOTBOT_DIR="dotbot"
+echo "Installing dotfiles"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DOTBOT_PATH="${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}"
+echo "Installing submodule(s)"
+git submodule update --init --recursive
 
-DOTBOT_FLAGS=()
-if [[ "${GITHUB_ACTIONS:-}" != "true" ]]; then
-  DOTBOT_FLAGS+=("--quiet")
+if [ $(uname) == "Darwin" ]; then
+  echo "Running on macOS"
+
+  echo "Brewing packages"
+  source install/macos/brew.sh
+
+  echo "Updating defaults"
+  source install/macos/defaults.sh
 fi
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+echo "Symlink dotfiles"
+stow . -t ~
 
-"$DOTBOT_PATH" "${DOTBOT_FLAGS[@]}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+echo "Configuring zsh as default shell"
+chsh -s $(which zsh)
+
+echo "Done."

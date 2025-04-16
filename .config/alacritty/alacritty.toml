@@ -2,7 +2,9 @@
 
 [general]
 # Live config reload (changes require restart)
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = [
+    "~/.config/alacritty/themes/gruvbox_dark.toml"
+]
 live_config_reload = true
 
 [bell]
@@ -64,9 +66,10 @@ args = ["-l", "-c", "tmux new-session -A -s mac"]
 
 [window]
 blur = true
-decorations = "buttonless"
+#decorations = "buttonless"
+decorations = "full"
 dynamic_padding = false
-opacity = 0.8
+opacity = 1.0
 
 # Window padding (changes require restart)
 #
