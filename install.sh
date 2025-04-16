@@ -7,8 +7,6 @@ echo "Installing dotfiles"
 echo "Installing submodule(s)"
 git submodule update --init --recursive
 
-#stow . -t ~
-
 if [ $(uname) == "Darwin" ]; then
   echo "Running on macOS"
 
@@ -18,6 +16,9 @@ if [ $(uname) == "Darwin" ]; then
   echo "Updating defaults"
   source install/macos/defaults.sh
 fi
+
+echo "Symlink dotfiles"
+stow . -t ~
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
