@@ -117,7 +117,6 @@ brew 'zsh-syntax-highlighting'
 
 # macos apps
 cask_args appdir: '/Applications'
-cask 'nikitabobko/tap/aerospace'
 cask 'alacritty'
 cask 'brave-browser'
 cask 'discord'
