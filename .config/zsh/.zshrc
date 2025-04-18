@@ -63,5 +63,6 @@ zstyle ":completion:*" squeeze-slashes true
 zstyle ":completion:*" use-cache yes
 
 eval "$(direnv hook zsh)"
+eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --hook pwd)"
