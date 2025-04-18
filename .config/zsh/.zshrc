@@ -45,6 +45,11 @@ setopt share_history
 source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/function.zsh"
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # load and initialize completion
 autoload -Uz compinit
 compinit
