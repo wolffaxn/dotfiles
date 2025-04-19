@@ -1,22 +1,33 @@
+# # vi:ft=conf
+#
 # docs:
 # ghostty +show-config --default --docs | nvim
+#
 
-# ghostty +list-themes
-theme = GruvboxDark
+auto-update-channel = tip
 
 # ghostty +list-fonts
-font-family = JetBrains Mono
 font-size = 16
+font-family = JetBrains Mono
 
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = hidden
-macos-option-as-alt = left
-
+background-opacity = 0.95
 background-blur-radius = 20
-background-opacity = 1.0
 
-window-decoration = true
+cursor-style = block
+cursor-style-blink = true
+
+macos-option-as-alt = left
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
 
 # shell
-initial-command = /opt/homebrew/bin/fish -l -c tmux attach || tmux new-session -A -s mac
-shell-integration = fish
+shell-integration = zsh
+
+# ghostty +list-themes
+theme = dark:tokyonight,light:tokyonight-day
+
+window-decoration = true
+window-padding-balance = true
+window-save-state = always
+
+working-directory = home
