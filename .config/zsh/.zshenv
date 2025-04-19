@@ -50,11 +50,17 @@ export GIT_EDITOR="nvim"
 
 # gnupg
 export GNUPGHOME=~/.gnupg
-export GPG_TTY="$(tty)"
+
+# set the GPG_TTY to be the same as the TTY
+if [ -n "$TTY" ]; then
+  export GPG_TTY=$(tty)
+else
+  export GPG_TTY="$TTY"
+fi
 
 # disable analytics
 export HOMEBREW_NO_ANALYTICS=1
-# stop brew install from update everything
+# disable auto update when running 'brew'
 export HOMEBREW_NO_AUTO_UPDATE=1
 # disable annoying hits
 export HOMEBREW_NO_ENV_HINTS=1
