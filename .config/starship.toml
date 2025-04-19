@@ -43,8 +43,8 @@ truncate_to_repo = false
 
 [git_branch]
 disabled = false
-format = "via [$symbol$branch]($style) "
-style = "mauve"
+format = "on [$symbol$branch]($style) "
+style = "blue"
 symbol = " "
 
 [hostname]
