@@ -1,6 +1,6 @@
 # ~/.config/starship.toml
 
-palette = "tokyonight_day"
+palette = "tokyonight_night"
 
 add_newline = true
 command_timeout = 2000

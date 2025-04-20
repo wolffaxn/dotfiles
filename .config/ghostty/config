@@ -49,7 +49,8 @@ shell-integration-features = cursor,sudo,no-title
 
 # theme
 # ghostty +list-themes
-theme = GruvboxDark
+#theme = dark:tokyonight,light:tokyonight-day
+theme = tokyonight
 background-opacity = 0.95
 background-blur-radius = 20
 window-theme = ghostty
