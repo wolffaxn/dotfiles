@@ -1,6 +1,6 @@
 # ~/.config/starship.toml
 
-palette = "catppuccin_mocha"
+palette = "tokyonight_day"
 
 add_newline = true
 command_timeout = 2000
@@ -19,14 +19,14 @@ $line_break$character"""
 success_symbol = "[❯](text)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
-vimcmd_replace_one_symbol = "[❮](purple)"
-vimcmd_replace_symbol = "[❮](purple)"
-vimcmd_visual_symbol = "[❮](lavender)"
+vimcmd_replace_one_symbol = "[❮](mangenta)"
+vimcmd_replace_symbol = "[❮](mangenta)"
+vimcmd_visual_symbol = "[❮](cyan)"
 
 [cmd_duration]
 disabled = false
 format = "took [$duration ]($style)"
-style = "pink"
+style = "orange"
 min_time = 10000
 min_time_to_notify = 10000
 show_milliseconds = true
@@ -35,7 +35,7 @@ show_notifications = false
 [directory]
 disabled = false
 format = "at [$path]($style)[$read_only]($read_only_style) "
-style = "lavender"
+style = "cyan"
 home_symbol = "󰋜 ~"
 read_only_style = "red"
 read_only = "  "
@@ -49,13 +49,13 @@ symbol = " "
 
 [hostname]
 disabled = false
-format = "$ssh_symbol[@$hostname](lavender) "
+format = "$ssh_symbol[@$hostname](cyan) "
 ssh_only = false
 ssh_symbol = " "
 
 [os]
 disabled = false
-format = "[$symbol](lavender) "
+format = "[$symbol](cyan) "
 
 [os.symbols]
 Arch = "󰣇"
@@ -70,7 +70,7 @@ Windows = " "
 [username]
 disabled = false
 format = "[$user]($style)"
-style_user = "lavender"
+style_user = "cyan"
 style_root = "bold red"
 show_always = true
 
@@ -102,30 +102,28 @@ symbol = " "
 disabled = false
 symbol = " "
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.tokyonight_day]
+fg = "#3760bf"
+bg = "#c4c8da"
+black = "#e1e2e7"
+red = "#f52a65"
+green = "#587539"
+yellow = "#8c6c3e"
+blue = "#2e7de9"
+magenta = "#9854f1"
+cyan = "#007197"
+white = "#6172b0"
+orange = "#b15c00"
+
+[palettes.tokyonight_night]
+fg = "#c0caf5"
+bg = "#292e42"
+black = "#1a1b26"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+orange = "#ff9e64"
