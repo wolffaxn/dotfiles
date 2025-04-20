@@ -1,22 +1,62 @@
+# # vi:ft=conf
+#
 # docs:
 # ghostty +show-config --default --docs | nvim
+#
 
-# ghostty +list-themes
-theme = GruvboxDark
+auto-update-channel = tip
 
+# fonts
 # ghostty +list-fonts
 font-family = JetBrains Mono
+font-family-bold = JetBrains Mono
+font-family-italic = JetBrains Mono
+font-family-bold-italic = JetBrains Mono
 font-size = 16
 
-macos-titlebar-style = tabs
-macos-titlebar-proxy-icon = hidden
+cursor-style = block
+cursor-style-blink = true
+
 macos-option-as-alt = left
+macos-titlebar-style = tabs
 
-background-blur-radius = 20
-background-opacity = 1.0
+# keybindings
+keybind = clear
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+keybind = super+shift+t=new_tab
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
+keybind = super+shift+comma=move_tab:-1
+keybind = super+shift+period=move_tab:1
+keybind = super+shift+c=copy_to_clipboard
+keybind = super+shift+v=paste_from_clipboard
+keybind = super+shift+enter=new_split:auto
+keybind = super+shift+i=inspector:toggle
+keybind = super+shift+m=toggle_split_zoom
+keybind = super+shift+r=reload_config
+keybind = super+shift+s=write_screen_file:open
+keybind = super+shift+w=close_surface
 
-window-decoration = true
+# mouse
+mouse-hide-while-typing = true
 
 # shell
-initial-command = /opt/homebrew/bin/fish -l -c tmux attach || tmux new-session -A -s mac
-shell-integration = fish
+shell-integration = zsh
+shell-integration-features = cursor,sudo,no-title
+
+# theme
+# ghostty +list-themes
+theme = GruvboxDark
+background-opacity = 0.95
+background-blur-radius = 20
+window-theme = ghostty
+
+# window
+window-decoration = true
+window-padding-balance = true
+window-save-state = always
+
+working-directory = home
