@@ -1,7 +1,15 @@
 # ~/.config/zsh/function.zsh
 
+function dsx() {
+  find . -name "*.DS_Store" -type f -delete
+}
+
 function flush-dns() {
   sudo killall -HUP mDNSResponder
+}
+
+function fname() {
+  find . -iname "*$@*"
 }
 
 function gen-sks-yk() {
@@ -10,8 +18,16 @@ function gen-sks-yk() {
   gpg --card-status
 }
 
+function mkcd() {
+  mkdir $1 && cd $1
+}
+
 function myip() {
-  curl -w '%{stdout}\n' ifconfig.me
+  curl -w "%{stdout}\n" ifconfig.me
+}
+
+function randpw() {
+  openssl rand -base64 4 | md5 | head -c$1 ; echo
 }
 
 function showcert() {

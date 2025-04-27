@@ -4,6 +4,7 @@ alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
+alias ......="cd ../../../../.."
 alias -- -="cd -"
 
 # reload zsh config
@@ -19,6 +20,8 @@ alias cls="clear"
 alias df="df -h"
 # calculates total disk usage for a folder
 alias du="du -h -c"
+# show sizes in MB
+alias free="free -m"
 
 # print the directory structure from the current directory in tree format
 alias dirtree="find . -type d|sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"

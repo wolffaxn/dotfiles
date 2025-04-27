@@ -4,17 +4,6 @@ if [[ ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# command history configuration
-export HISTFILE=$ZDOTDIR/.zsh_history
-export HIST_STAMPS="yyyy-mm-dd"
-export HISTSIZE=1000000
-export SAVEHIST=1000000
-# makes the switch between modes quicker
-export KEYTIMEOUT=1
-export HIST_STAMPS="yyyy-mm-dd"
-# enables prefixed search for zsh-history-substring-search
-export HISTORY_SUBSTRING_SEARCH_PREFIXED=1
-
 # set language and encoding
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
@@ -34,6 +23,7 @@ export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
 export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:=-$HOME/.config/aws/config}"
@@ -58,13 +48,16 @@ else
   export GPG_TTY="$TTY"
 fi
 
+# set app directory
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # disable analytics
 export HOMEBREW_NO_ANALYTICS=1
-# stop brew install from update everything
+# disable auto update when running brew command
 export HOMEBREW_NO_AUTO_UPDATE=1
 # disable annoying hits
 export HOMEBREW_NO_ENV_HINTS=1
 
+# dont't clear the screen after quitting a man page
 export MANPAGER="less -X"
 export RIPGREP_CONFIG_PATH="${RIPGREP_CONFIG_PATH:-$HOME/.config/ripgrep/ripgreprc}"
 
@@ -76,4 +69,4 @@ export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$HOME/.config/starship.toml}"
 
 # vim
 export EDITOR="nvim"
-export VISUAL="nvim"
+export VISUAL=$EDITOR
