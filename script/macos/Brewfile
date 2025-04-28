@@ -106,6 +106,7 @@ brew 'keychain'
 brew 'openssh'
 
 # tmux related tools
+brew 'sesh'
 brew 'tmux'
 
 # zsh
