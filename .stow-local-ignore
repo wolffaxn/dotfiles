@@ -1,6 +1,6 @@
 .git
 .github
-install
+script
 .gitignore
 .gitmodules
 install.sh

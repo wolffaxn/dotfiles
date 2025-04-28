@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -eo pipefail
 
 echo "Installing dotfiles..."
 
@@ -18,13 +18,13 @@ if [ $(uname) == "Darwin" ]; then
   brew analytics off
   
   echo "Installing Brew Formulae..."
-  source install/macos/brew.sh
+  source macos/brew.sh
 
   echo "Updating defaults..."
-  source install/macos/defaults.sh
+  source macos/defaults.sh
 
   echo "Rearrange dock..."
-  source install/macos/dock.sh
+  source macos/dock.sh
 fi
 
 echo "Symlink dotfiles..."
