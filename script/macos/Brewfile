@@ -108,6 +108,7 @@ brew 'openssh'
 # tmux related tools
 brew 'sesh'
 brew 'tmux'
+brew 'tpm'
 
 # zsh
 brew 'zsh'
