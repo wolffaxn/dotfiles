@@ -1,129 +1,117 @@
 # ~/.config/starship.toml
 
-palette = "tokyonight_night"
-
-add_newline = true
-command_timeout = 2000
+palette = "tokyonight"
 
 format = """
-$os\
 $username\
 $hostname\
-$kubernetes\
 $directory\
 $git_branch\
-$cmd_duration\
-$line_break$character"""
+$git_status\
+$fill\
+$docker_context\
+$golang\
+$java\
+$kotlin\
+$lua\
+$python\
+$rust\
+\n\
+$character\
+$status
+"""
+
+add_newline = true
 
 [character]
-success_symbol = "[❯](text)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
-vimcmd_replace_one_symbol = "[❮](mangenta)"
-vimcmd_replace_symbol = "[❮](mangenta)"
-vimcmd_visual_symbol = "[❮](cyan)"
+success_symbol = "[❯](bold blue)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
 
-[cmd_duration]
+[status]
 disabled = false
-format = "took [$duration ]($style)"
-style = "orange"
-min_time = 10000
-min_time_to_notify = 10000
-show_milliseconds = true
-show_notifications = false
-
-[directory]
-disabled = false
-format = "at [$path]($style)[$read_only]($read_only_style) "
-style = "cyan"
-home_symbol = "󰋜 ~"
-read_only_style = "red"
-read_only = "  "
-truncate_to_repo = false
-
-[git_branch]
-disabled = false
-format = "via [$symbol$branch]($style) "
-style = "blue"
-symbol = " "
-
-[hostname]
-disabled = false
-format = "$ssh_symbol[@$hostname](cyan) "
-ssh_only = false
-ssh_symbol = " "
-
-[os]
-disabled = false
-format = "[$symbol](cyan) "
-
-[os.symbols]
-Arch = "󰣇"
-Debian = " "
-FreeBSD = " "
-Macos = "󰀵"
-NixOS = " "
-Ubuntu = "'"
-Unknown = " "
-Windows = " "
+format = " [$status_code](bold red)"
+show_success = false
 
 [username]
-disabled = false
-format = "[$user]($style)"
-style_user = "cyan"
-style_root = "bold red"
-show_always = true
+show_always = false
+style_user = "fg:lavender"
+style_root = "fg:red"
+
+[hostname]
+ssh_only = true
+style = "fg:lavender"
+
+[directory]
+style = "fg:blue"
+format = "[$path]($style)"
+truncation_length = 3
+
+[git_branch]
+symbol = ""
+style = "fg:lavender"
+format = " on [$symbol $branch]($style)"
+
+[git_status]
+style = "fg:lavender"
+format = " ([$all_status$ahead_behind]($style) )"
+
+[fill]
+symbol = " "
+
+[docker_context]
+symbol = "🐳"
+style = "fg:blue"
+format = " [$symbol $context]($style)"
+only_with_files = true
 
 [golang]
-disabled = false
-symbol = " "
+symbol = ""
+style = "fg:yellow"
+format = " [$symbol ${version}]($style)"
+detect_extensions = ["go"]
+detect_files = ["go.mod"]
 
 [java]
-disabled = false
-symbol = " "
+symbol = "☕"
+style = "fg:yellow"
+format = " [$symbol ${version}]($style)"
+detect_extensions = ["java"]
+detect_files = ["pom.xml", "build.gradle", "build.gradle.kts"]
 
 [kotlin]
-disabled = false
-symbol = " "
+symbol = "🅺"
+style = "fg:lavender"
+format = " [$symbol ${version}]($style)"
+detect_extensions = ["kt", "kts"]
+detect_files = ["build.gradle.kts", "settings.gradle.kts"]
 
-[kubernetes]
-disabled = false
-format = "via [󱃾 $context($namespace)] "
-
-[nix_shell]
-disabled = false
-symbol = " "
+[lua]
+symbol = " "
+style = "fg:green"
+format = "[$symbol($version )]($style)"
 
 [python]
-disabled = false
-symbol = " "
+symbol = ""
+style = "fg:green"
+format = " [$symbol (${version})($virtualenv)]($style)"
+detect_extensions = ["py"]
+detect_files = ["pyproject.toml", "requirements.txt", "setup.py", "Pipfile", "tox.ini"]
 
 [rust]
-disabled = false
-symbol = " "
+symbol = "🦀"
+style = "fg:red"
+format = " [$symbol ${version}]($style)"
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
 
-[palettes.tokyonight_day]
-fg = "#3760bf"
-bg = "#c4c8da"
-black = "#e1e2e7"
-red = "#f52a65"
-green = "#587539"
-yellow = "#8c6c3e"
-blue = "#2e7de9"
-magenta = "#9854f1"
-cyan = "#007197"
-white = "#6172b0"
-orange = "#b15c00"
-
-[palettes.tokyonight_night]
-fg = "#c0caf5"
-bg = "#292e42"
-black = "#1a1b26"
-red = "#f7768e"
+[palettes.tokyonight]
+base = "#1a1b26"
+surface = "#2f3549"
+overlay = "#3b4261"
+text = "#c0caf5"
+blue = "#7aa2f7"
+lavender = "#bb9af7"
 green = "#9ece6a"
 yellow = "#e0af68"
-blue = "#7aa2f7"
-magenta = "#bb9af7"
-cyan = "#7dcfff"
-white = "#a9b1d6"
-orange = "#ff9e64"
+red = "#f7768e"
