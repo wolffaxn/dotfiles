@@ -1,1 +1,15 @@
-install/macos/Brewfile.lock.json
+.config/fish/fish_variables
+.config/zsh/.zcompcache
+.config/zsh/.zsh_sessions
+.config/zsh/.zcompdump
+.config/zsh/.zsh_history
+.gnupg/private-keys-v1.d
+.gnupg/pubring.kbx
+.gnupg/trustdb.gpg
+.local/share/*
+.local/state/*
+.ssh/id_ed25519_sk
+.ssh/id_ed25519_sk.pub
+.ssh/known_hosts
+.ssh/vm_ed25519
+.ssh/vm_ed25519.pub
