@@ -132,6 +132,10 @@
   # see https://sfconservancy.org/news/2020/jun/23/gitbranchname
   defaultBranch = "main"
 
+[maintenance]
+  auto = true
+  strategy = "incremental"
+
 [merge]
   # 3-way diff
   conflictstyle = "diff3"
@@ -139,8 +143,8 @@
   log = true
   # always show a diffstat at the end of a merge
   stat = true
-  # use nvimmerge
-  tool = "nvimmerge"
+  # 4-way merge view
+  tool = "nvimdiff4"
 
 [mergetool]
   # don't keep the original backup files
@@ -164,9 +168,8 @@
 
 [push]
   autoSetupRemote = true
-  # When push.default is set to 'matching', git will push local branches
-  # to the remote branches that already exist with the same name.
-  default = "matching"
+  # only push current branch
+  default = "current"
   # push tags
   followTags = true
 
@@ -191,7 +194,8 @@
   showUntrackedFiles = "all"
 
 [submodule]
-  fetchJobs = 4
+  recurse = true
+  fetchJobs = 8
 
 [tag]
   sort = "version:refname"
