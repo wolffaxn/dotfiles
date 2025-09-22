@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily",
+        "editor.fontSize"
+    ],
+}
