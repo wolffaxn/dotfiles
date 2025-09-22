@@ -12,6 +12,16 @@ font-family = JetBrains Mono
 font-family-bold = JetBrains Mono
 font-family-italic = JetBrains Mono
 font-family-bold-italic = JetBrains Mono
+# ss01: != and ===
+font-feature = "ss01"
+# ss02: <= and >=
+font-feature = "ss02"
+# ss03: -> and ~>
+font-feature = "ss03"
+# ss04: <> and </>
+font-feature = "ss04"
+# liga: //, ..., ||
+font-feature = "liga"
 font-size = 16
 
 cursor-style = block
@@ -48,8 +58,8 @@ shell-integration-features = cursor,sudo,no-title
 
 # theme
 # ghostty +list-themes
-#theme = dark:tokyonight,light:tokyonight-day
-theme = tokyonight
+#theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+theme = Catppuccin Mocha
 background-opacity = 0.95
 background-blur-radius = 20
 window-theme = ghostty
