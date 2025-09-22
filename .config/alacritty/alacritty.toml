@@ -3,7 +3,7 @@
 [general]
 # Live config reload (changes require restart)
 import = [
-    "~/.config/alacritty/themes/tokyonight_night.toml"
+    "~/.config/alacritty/themes/catppuccin-mocha.toml"
 ]
 live_config_reload = true
 
