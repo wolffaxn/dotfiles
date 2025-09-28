@@ -1,0 +1,19 @@
+# group the results by file
+--group
+
+# only search case-sensitiv with mixed case
+--smart-case
+
+# follow symlinks
+--follow
+
+# colorful output
+--color
+
+# ignore directories
+--ignore-dir=log
+--ignore-dir=tmp
+
+# add file types
+--type-set=json=.json
+--type-set=md=.markdown,.md

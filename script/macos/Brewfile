@@ -3,6 +3,7 @@
 #
 # Use `brew bundle install --file <Brewfile>` to install the formulas listed below.
 
+brew "ack"
 brew "age"
 brew "ansible"
 brew "ansible-lint"
