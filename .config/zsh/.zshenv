@@ -28,6 +28,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:=-$HOME/.config/aws/config}"
 export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
+export CURL_HOME="${CURL_HOME:-$HOME/.config/curl}"
 export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 # fzf specific - https://github.com/junegunn/fzf#key-bindings-for-command-line
