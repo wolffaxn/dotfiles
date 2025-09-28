@@ -2,10 +2,11 @@ version: "1"
 aliases:
     clone: repo clone
     co: pr checkout
+    me: pr list --assignee @me
     pr: pr create --web
     pv: pr view --web
     v: repo view --web
 editor: nvim
-git_protocol: ssh
+git_protocol: https
 pager: less
 prompt: enabled
