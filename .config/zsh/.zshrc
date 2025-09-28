@@ -157,7 +157,27 @@ source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlight
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(direnv hook zsh)"
-eval "$(fzf --zsh)"
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh --hook pwd)"
+# GitHub CLI completion
+if command -v gh &>/dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
+
+# Direnv
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+# fzf
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+fi
+
+# Starship
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# Zoxide
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init zsh --hook pwd)"
+fi

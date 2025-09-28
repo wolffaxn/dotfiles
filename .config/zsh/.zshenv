@@ -4,15 +4,13 @@ if [[ ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# set language and encoding
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US
-export LC_ALL=en_US.UTF-8
-export LC_COLLATE=C
-export LC_CTYPE=en_US.UTF-8
-export LC_MONETARY=en_US.UTF-8
-export LC_NUMERIC=en_US.UTF-8
-export LC_TIME=en_US.UTF-8
+export KEYTIMEOUT="1"
+
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR="nvim"
+  export GIT_EDITOR=$EDITOR
+  export VISUAL=$EDITOR
+fi
 
 # set XDG Base Directory Specification
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -31,13 +29,18 @@ export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
 export CURL_HOME="${CURL_HOME:-$HOME/.config/curl}"
 export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
-# fzf specific - https://github.com/junegunn/fzf#key-bindings-for-command-line
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --no-ignore-vcs"
-export FZF_DEFAULT_OPTS="--height 75% --layout=reverse --border"
-export FZF_ALT_C_COMMAND="fd --type d . --color=never"
-export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+# fd
+FD_OPTIONS="--follow --exclude .git"
 
-export GIT_EDITOR="nvim"
+# fzf specific - https://github.com/junegunn/fzf#key-bindings-for-command-line
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS --color=never --hidden"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
+export FZF_CTRL_R_OPTS="--reverse"
+export FZF_CTRL_T_COMMAND="git ls-files --cached --others --exclude-standard | fd --hidden --type f --type l $FD_OPTIONS"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard | fd --hidden --type f --type l $FD_OPTIONS"export FZF_DEFAULT_OPTS="--height 75% --layout=reverse --border"
+export FZF_TMUX="1"
+export FZF_TMUX_OPTS="-p"
 
 # gnupg
 export GNUPGHOME=~/.gnupg
@@ -58,16 +61,26 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # disable annoying hits
 export HOMEBREW_NO_ENV_HINTS=1
 
+# set language and encoding
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US
+export LC_ALL=en_US.UTF-8
+export LC_COLLATE=C
+export LC_CTYPE=en_US.UTF-8
+export LC_MONETARY=en_US.UTF-8
+export LC_NUMERIC=en_US.UTF-8
+export LC_TIME=en_US.UTF-8
+
+# Man
+export MANPATH="/usr/local/man:$MANPATH"
 # dont't clear the screen after quitting a man page
 export MANPAGER="less -X"
+
+# ripgrep
 export RIPGREP_CONFIG_PATH="${RIPGREP_CONFIG_PATH:-$HOME/.config/ripgrep/ripgreprc}"
 
-export RUSTUP_HOME="${RUSTUP_HOME:-$HOME/.config/rustup}"
-#export RUSTUP_DIST_SERVER=
-#export RUSTUP_UPDATE_ROOT=
+# Rust
+export RUSTUP_HOME="${RUSTUP_HOME:-$HOME/.config/rustup}"#export RUSTUP_DIST_SERVER=
 
+# Starship
 export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$HOME/.config/starship.toml}"
-
-# vim
-export EDITOR="nvim"
-export VISUAL=$EDITOR
