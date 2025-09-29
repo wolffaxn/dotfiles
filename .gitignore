@@ -3,6 +3,16 @@
 .config/zsh/.zsh_sessions
 .config/zsh/.zcompdump
 .config/zsh/.zsh_history
+.docker/bin/inference/*
+.docker/bin/lib/*
+.docker/buildx/*
+.docker/cli-plugins/*
+.docker/cloud/*
+.docker/contexts/meta/*
+.docker/desktop-build/*
+.docker/models/*
+.docker/modules/*
+.docker/mutagen/daemon/*
 .gnupg/private-keys-v1.d
 .gnupg/pubring.kbx
 .gnupg/trustdb.gpg
