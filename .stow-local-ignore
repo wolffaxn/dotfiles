@@ -3,7 +3,6 @@
 script
 .gitignore
 .gitmodules
-install.sh
 LICENSE
 README.md
 stylua.toml
