@@ -1,0 +1,10 @@
+customCommands:
+  containers:
+    - name: bash
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} bash'
+      serviceNames: []
+    - name: inspect
+      attach: true
+      command: 'sh -c "docker inspect {{ .Container.ID }} | jq -C | less"'
+      serviceNames: []
