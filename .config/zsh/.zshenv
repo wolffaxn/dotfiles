@@ -45,13 +45,6 @@ export FZF_TMUX_OPTS="-p"
 # gnupg
 export GNUPGHOME=~/.gnupg
 
-# set the GPG_TTY to be the same as the TTY
-if [ -n "$TTY" ]; then
-  export GPG_TTY=$(tty)
-else
-  export GPG_TTY="$TTY"
-fi
-
 # set app directory
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # disable analytics

@@ -157,6 +157,14 @@ source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlight
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# set SSH_AUTH_SOCK so that SSH will use gpg-agent instead of ssh-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY="${TTY:-"$(tty)"}"
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # GitHub CLI completion
 if command -v gh &>/dev/null; then
   eval "$(gh completion -s zsh)"
