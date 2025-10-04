@@ -189,3 +189,17 @@ fi
 if command -v zoxide &>/dev/null; then
   eval "$(zoxide init zsh --hook pwd)"
 fi
+
+# Antidote
+
+# don't use the legacy antibody format
+zstyle ":antidote:bundle" use-friendly-names on
+
+zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  (
+    source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
+    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+  )
+fi
+source ${zsh_plugins}.zsh
