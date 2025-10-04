@@ -15,7 +15,11 @@
 .docker/modules/*
 .docker/mutagen/daemon/*
 .gnupg/private-keys-v1.d
+.gnupg/.#*
 .gnupg/pubring.kbx
+.gnupg/random_seed
+.gnupg/reader_0.status
+.gnupg/sshcontrol
 .gnupg/trustdb.gpg
 .local/share/*
 .local/state/*
