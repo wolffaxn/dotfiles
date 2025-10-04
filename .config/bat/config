@@ -4,5 +4,5 @@
 --map-syntax="flake.lock:JSON"
 --pager="less -RFK"
 --style="numbers,changes,header,grid"
---theme="catppuccin-mocha"
+--theme="Catppuccin-mocha"
 --wrap="never"
