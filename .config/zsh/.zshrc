@@ -152,11 +152,6 @@ zstyle ":completion:*" verbose yes
 source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/function.zsh"
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # set SSH_AUTH_SOCK so that SSH will use gpg-agent instead of ssh-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
