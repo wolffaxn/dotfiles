@@ -18,8 +18,10 @@ vim.opt.hlsearch = true
 
 vim.opt.splitkeep = "cursor"
 
--- clipboard
-vim.opt.clipboard:append("unnamedplus")
+-- sync clipboard netween os and neovim
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
 
 -- turn off swapfile
 vim.opt.swapfile = false
