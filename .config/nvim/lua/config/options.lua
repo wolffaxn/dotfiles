@@ -16,6 +16,8 @@ vim.opt.softtabstop = 2
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
+vim.opt.conceallevel = 0
+
 vim.opt.splitkeep = "cursor"
 
 -- sync clipboard netween os and neovim
