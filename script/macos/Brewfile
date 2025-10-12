@@ -103,11 +103,13 @@ brew "luarocks"
 brew "maven"
 brew "npm"
 brew "python@3.13"
+brew "python-lsp-server"
 brew "ruby"
 brew "rustup"
 brew "scala"
 brew "sccache"
 cask "temurin"
+brew "yaml-language-server"
 brew "zig"
 
 # gnupg related tools
