@@ -34,3 +34,21 @@ Run stow to install the dotfiles:
 cd ~/.dotfiles
 stow . -t ~
 ```
+
+## Install Neovim + LazyVim
+
+```sh 
+# required
+mv ~/.config/nvim ~/.config/nvim.bak
+
+# optional 
+mv ~/.local/share/nvim ~/.local/share/nvim.bak 
+mv ~/.local/state/nvim ~/.local/state/nvim.bak 
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
+
+Run Neovim:
+
+```sh 
+nvim
+```
