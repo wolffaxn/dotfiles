@@ -7,5 +7,8 @@ vim.keymap.set({ "n", "x" }, "d", '"_d')
 vim.keymap.set({ "n", "x" }, "x", '"_x')
 vim.keymap.set({ "n", "x" }, "c", "c")
 
+vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
+vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
+
 -- Paste without overwriting clipboard
 vim.keymap.set("x", "p", '"_dP', { desc = "Paste without overwriting clipboard" })

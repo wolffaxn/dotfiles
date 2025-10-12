@@ -27,3 +27,5 @@ end)
 
 -- turn off swapfile
 vim.opt.swapfile = false
+
+vim.opt.wrap = true
