@@ -20,6 +20,12 @@ Install Homebrew:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Install required packages:
+
+```sh
+brew install git stow
+```
+
 ## Clone dotfiles
 
 Clone dotfiles git repository:
@@ -35,7 +41,7 @@ cd ~/.dotfiles
 stow . -t ~
 ```
 
-## Install Neovim + LazyVim
+## Install Neovim
 
 ```sh 
 # required
@@ -49,6 +55,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 
 Run Neovim:
 
-```sh 
-nvim
+```sh
+cd ~/.dotfiles
+nvim .
 ```
