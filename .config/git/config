@@ -72,7 +72,7 @@
 [branch]
   # let the local branch track the remote branch when branching off a remote branch
   autosetupmerge = true
-  sort = "-comitterdate"
+  sort = "-committerdate"
 
 [color]
   branch = "auto"
