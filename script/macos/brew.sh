@@ -8,4 +8,5 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 brew update
 brew bundle install --cleanup --file="${BASEDIR}/Brewfile"
 brew upgrade
-brew cleanup
+brew upgrade --cask --greedy
+brew cleanup --prune=30
