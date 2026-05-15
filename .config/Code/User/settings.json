@@ -1,11 +1,24 @@
 {
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontLigatures": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'liga'", 
     "editor.fontSize": 16,
-    "workbench.colorTheme": "Catppuccin Latte",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.fixAll": ["source.unusedImports"],  
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+    "terminal.integrated.fontLigatures.enabled": true,    
+    "terminal.integrated.fontLigatures.featureSettings": "'ss01', 'ss02', 'ss03', 'ss04', 'liga' on",
+    "terminal.integrated.fontSize": 16,
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.iconTheme": "vscode-icons",
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily",
-        "editor.fontSize"
+        "editor.fontLigatures",
+        "editor.fontSize",
+        "terminal.integrated.fontFamily",
+        "terminal.integrated.fontLigatures.enabled",
+        "terminal.integrated.fontLigatures.featureSettings",
+        "terminal.integrated.fontSize",
+        "workbench.iconTheme"
     ],
 }
