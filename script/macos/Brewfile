@@ -88,6 +88,9 @@ brew "wget"
 brew "yazi"
 brew "zoxide"
 
+# ai tools
+brew "copilot-cli"
+
 # development tools
 brew "ant"
 brew "delve"
