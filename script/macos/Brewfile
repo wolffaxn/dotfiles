@@ -88,9 +88,6 @@ brew "wget"
 brew "yazi"
 brew "zoxide"
 
-# ai tools
-brew "copilot-cli"
-
 # development tools
 brew "ant"
 brew "delve"
@@ -137,6 +134,7 @@ cask_args appdir: "/Applications"
 cask "alacritty"
 cask "brave-browser"
 cask "claude"
+cask "copilot-cli"
 cask "discord"
 cask "docker-desktop"
 cask "ghostty"
