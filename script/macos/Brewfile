@@ -110,6 +110,7 @@ brew "rustup"
 brew "scala"
 brew "sccache"
 cask "temurin"
+cask "whatsapp"
 brew "yaml-language-server"
 brew "zig"
 
