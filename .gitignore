@@ -19,6 +19,11 @@
 .gnupg/pubring.kbx
 .gnupg/random_seed
 .gnupg/reader_0.status
+.gnupg/S.gpg-agent
+.gnupg/S.gpg-agent.browser
+.gnupg/S.gpg-agent.extra
+.gnupg/S.gpg-agent.ssh
+.gnupg/S.scdaemon
 .gnupg/sshcontrol
 .gnupg/trustdb.gpg
 .local/share/*
