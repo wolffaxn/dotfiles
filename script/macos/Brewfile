@@ -85,7 +85,6 @@ brew "tree-sitter-cli"
 brew "unar"
 brew "watch"
 brew "wget"
-brew "yazi"
 brew "zoxide"
 
 # development tools
