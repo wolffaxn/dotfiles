@@ -132,7 +132,6 @@ brew "antidote"
 
 # macos apps
 cask_args appdir: "/Applications"
-cask "alacritty"
 cask "brave-browser"
 cask "claude"
 cask "copilot-cli"
