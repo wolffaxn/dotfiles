@@ -1,0 +1,5 @@
+{
+  "trustedformulae": [
+    "hashicorp/tap/terraform"
+  ]
+}
