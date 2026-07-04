@@ -23,6 +23,7 @@
 .gnupg/trustdb.gpg
 .local/share/*
 .local/state/*
+.ssh/control/*
 .ssh/id_ed25519_sk
 .ssh/id_ed25519_sk.pub
 .ssh/known_hosts
