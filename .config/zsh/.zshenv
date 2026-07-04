@@ -24,9 +24,15 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
+# AWS
 export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:=-$HOME/.config/aws/config}"
+# Cargo
 export CARGO_HOME="${CARGO_HOME:-$HOME/.config/cargo}"
+# Curl
 export CURL_HOME="${CURL_HOME:-$HOME/.config/curl}"
+# Docker
+export DOCKER_CONFIG="${DOCKER_CONFIG:-$HOME/.config/docker}"
+# Dotfiles
 export DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 # fd
