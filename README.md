@@ -3,59 +3,10 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/wolffaxn/dotfiles/main.svg)](https://github.com/wolffaxn/dotfiles)
 
-Configuration files for MacOS and Linux.
+Alex Wolff's dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
-## Install Homebrew
-
-First, install the Xcode Command Line Tools:
+Install them with:
 
 ```sh
-xcode-select --install
-sudo xcodebuild -license accept
-```
-
-Install Homebrew:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Install required packages:
-
-```sh
-brew install git stow
-```
-
-## Clone dotfiles
-
-Clone dotfiles git repository:
-
-```sh
-git clone git@github.com:wolffaxn/dotfiles.git ~/.dotfiles
-```
-
-Run stow to install the dotfiles:
-
-```sh
-cd ~/.dotfiles
-stow . -t ~
-```
-
-## Install Neovim
-
-```sh 
-# required
-mv ~/.config/nvim ~/.config/nvim.bak
-
-# optional 
-mv ~/.local/share/nvim ~/.local/share/nvim.bak 
-mv ~/.local/state/nvim ~/.local/state/nvim.bak 
-mv ~/.cache/nvim ~/.cache/nvim.bak
-```
-
-Run Neovim:
-
-```sh
-cd ~/.dotfiles
-nvim .
+chezmoi init wolffaxn
 ```
