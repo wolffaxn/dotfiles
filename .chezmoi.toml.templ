@@ -1,0 +1,16 @@
+{{/* work around unreliable hostname on darwin */}}
+{{- $hostname := .chezmoi.hostname -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $hostname := output "scutil" "--get" "LocalHostName" | trim -}}
+{{- end -}}
+
+{{- $email := "wolffaxn@gmail.com" -}}
+
+[data]
+    email = {{ $email | quote }}
+    hostname = {{ $hostname | quote }}
+
+[edit]
+    command = "code"
+    args = ["--wait"]
+
