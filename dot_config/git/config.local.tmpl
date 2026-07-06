@@ -11,6 +11,6 @@
   gpgsign = true
 
 [user]
-  name = "Alexander Wolff"
-  email = "wolffaxn@gmail.com"
-  signingKey = "CC475A552C299D3B"
+	name = {{ .name }}
+	email = {{ .email }}
+	signingkey = {{ .gpg_keyid }}
