@@ -1,0 +1,13 @@
+# enables SSH support (ssh-agent)
+enable-ssh-support
+
+# default cache timeout of 8 hours
+default-cache-ttl 28800
+max-cache-ttl 28800
+
+# pinentry
+{{ if eq .chezmoi.os "darwin" -}}
+pinentry-program /opt/homebrew/bin/pinentry-mac
+{{ else if eq .chezmoi.os "linux" -}}
+pinentry-program /usr/bin/pinentry-tty
+{{- end }}
