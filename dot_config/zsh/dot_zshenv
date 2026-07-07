@@ -83,3 +83,6 @@ export RUSTUP_HOME="${RUSTUP_HOME:-$HOME/.config/rustup}"#export RUSTUP_DIST_SER
 
 # Starship
 export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$HOME/.config/starship.toml}"
+
+# Terraform
+export TF_PLUGIN_CACHE_DIR="${TF_PLUGIN_CACHE_DIR:-$HOME/.config/terraformplugin-cache}"
