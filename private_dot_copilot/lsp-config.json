@@ -1,0 +1,42 @@
+{
+  "lspServers": {
+    "go": {
+      "command": "gopls",
+      "args": [
+        "serve"
+      ],
+      "fileExtensions": {
+        ".go": "go",
+        ".mod": "gomod",
+        ".sum": "gosum"
+      }
+    },
+    "java": {
+      "command": "jdtls",
+      "args": [],
+      "fileExtensions": {
+        ".java": "java"
+      }
+    },
+    "python": {
+      "command": "basedpyright",
+      "args": [
+        "--stdio"
+      ],
+      "fileExtensions": {
+        ".py": "python"
+      }
+    },    
+    "rust": {
+      "command": "rustup",
+      "args": [
+        "run",
+        "stable",
+        "rust-analyzer"
+      ],
+      "fileExtensions": {
+        ".rs": "rust"
+      }
+    }
+  }
+}
