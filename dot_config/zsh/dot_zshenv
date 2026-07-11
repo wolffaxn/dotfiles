@@ -60,6 +60,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # disable annoying hits
 export HOMEBREW_NO_ENV_HINTS=1
 
+# inputrc
+export INPUTRC="${INPUTRC:-$HOME/.config/readline/inputrc}"
+
 # set language and encoding
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
