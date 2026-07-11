@@ -24,6 +24,8 @@ font-feature = "ss04"
 font-feature = "liga"
 font-size = 16
 
+command = /usr/bin/env zsh --login -c "if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then tmux new -A -s mac >/dev/null 2>&1; fi"
+
 cursor-style = block
 cursor-style-blink = true
 
