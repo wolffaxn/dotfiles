@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SOURCE_HOOK="{{ .chezmoi.homeDir }}/.config/git/template/hooks/pre-push"
+TARGET_DIR="{{ .chezmoi.sourceDir }}/.git/hooks"
+TARGET_HOOK="$TARGET_DIR/pre-push"
+
+echo "⚡ Checking Git pre-push hook configuration..."
+
+# verify source hook exists
+if [ ! -f "$SOURCE_HOOK" ]; then
+    echo "❌ Source hook not found at $SOURCE_HOOK"
+    exit 0
+fi
+
+# verify target git directory exists
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "⚠️ Chezmoi source path is not a Git repository. Skipping hook installation."
+    exit 0
+fi
+
+# copy and make executable
+cp "$SOURCE_HOOK" "$TARGET_HOOK"
+chmod +x "$TARGET_HOOK"
+
+echo "✅ Git pre-push hook successfully installed to $TARGET_HOOK"

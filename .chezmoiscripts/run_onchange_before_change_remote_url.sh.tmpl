@@ -6,6 +6,11 @@ SOURCE_DIR="{{ .chezmoi.sourceDir }}"
 CURRENT_URL=$(git -C "$SOURCE_DIR" remote get-url origin 2>/dev/null)
 TARGET_URL="git@github.com:wolffaxn/dotfiles.git"
 
+echo "⚡ Checking Git remote URL configuration..."
+
 if [ "$CURRENT_URL" != "$TARGET_URL" ]; then
     git -C "$SOURCE_DIR" remote set-url origin "$TARGET_URL"
+    echo "✅ Git remote URL successfully changed to $TARGET_URL"
+else
+    echo "✅ Git remote URL is already set to $TARGET_URL"
 fi

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo "Running Gitleaks security scan..."
+
+gitleaks git --verbose --redact
+
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+echo "Gitleaks scan passed. Proceeding with push."
+exit 0
+exit 0
