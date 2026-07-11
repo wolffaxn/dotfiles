@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SOURCE_DIR="{{ .chezmoi.sourceDir }}"
+CURRENT_URL=$(git -C "$SOURCE_DIR" remote get-url origin 2>/dev/null)
+TARGET_URL="git@github.com:wolffaxn/dotfiles.git"
+
+if [ "$CURRENT_URL" != "$TARGET_URL" ]; then
+    git -C "$SOURCE_DIR" remote set-url origin "$TARGET_URL"
+fi

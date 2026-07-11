@@ -8,5 +8,5 @@ Alex Wolff's dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezm
 Install them with:
 
 ```sh
-chezmoi init wolffaxn
+chezmoi init --apply wolffaxn
 ```
