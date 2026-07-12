@@ -1,8 +1,9 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
-#
-# Rearrange dock icons.
 
-set -e
+set -euo pipefail
+
+echo "🛠️  Rearrange macOS dock"
 
 dockutil --no-restart --remove all
 dockutil --no-restart --add "/Applications/Safari.app"
@@ -15,3 +16,4 @@ dockutil --no-restart --add "/Applications/Spotify.app"
 dockutil --no-restart --add "/Applications/KeePassXC.app"
 
 killall Dock
+{{ end -}}

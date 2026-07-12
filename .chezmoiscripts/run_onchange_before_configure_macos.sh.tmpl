@@ -1,7 +1,11 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -euo pipefail
 
+echo "🛠️  Configuring macOS"
+
+#
 # Appearance
 #
 
@@ -10,6 +14,7 @@ defaults write -globalDomain AppleInterfaceStyle -string "Light"
 
 killall SystemUIServer 2>/dev/null || true
 
+#
 # Control Center
 #
 
@@ -18,6 +23,7 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Blueto
 
 killall ControlCenter 2>/dev/null || true
 
+#
 # Finder
 #
 
@@ -30,6 +36,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 killall Finder 2>/dev/null || true
 
+#
 # Keyboard
 #
 
@@ -45,6 +52,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
 
+#
 # Spotlight
 #
 
@@ -53,8 +61,14 @@ defaults write com.apple.Spotlight MenuItemHidden -int 1
 
 killall Spotlight 2>/dev/null || true
 
-# Hammerspoon config
+#
+# Hammerspoon
+#
+
 defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool false
 defaults write org.hammerspoon.Hammerspoon MJShowMenuIconKey -bool false
 defaults write org.hammerspoon.Hammerspoon MJSkipDockMenuIconProblemAlertKey -bool true
+
+echo "⚠️  Requires restart to take effect"
+{{ end -}}
