@@ -1,0 +1,31 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "🛠️  Install homebrew packages"
+
+brew bundle --file=/dev/stdin <<EOF
+{{- if and (hasKey . "packages") (hasKey .packages "darwin") (hasKey .packages.darwin "homebrew") }}
+{{- $hb := .packages.darwin.homebrew }}
+  
+{{- if $hb.taps }}
+{{- range $hb.taps.core }}
+tap "{{ . }}"
+{{- end }}
+{{- end }}
+
+{{- if $hb.formulae }}
+{{- range $hb.formulae.core }}
+brew "{{ . }}"
+{{- end }}
+{{- end }}
+
+{{- if $hb.casks }}
+{{- range $hb.casks.core }}
+cask "{{ . }}"
+{{- end }}
+{{- end }}
+{{- end }}
+EOF
+{{ end -}}
