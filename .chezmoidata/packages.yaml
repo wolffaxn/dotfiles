@@ -118,6 +118,7 @@ packages:
           - tree
           - tree-sitter-cli
           - unar
+          - uv
           - watch
           - wget
           - zig
