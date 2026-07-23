@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "🛠️  Symlinking agent skills"
+
+# Target directory for the symlinks (home directory)
+TARGET_DIR="$HOME/.github/skills"
+
+# Base directory where chezmoi externals are checked out
+BASE_SRC_DIR="$HOME/.local/share/skills"
+
+# Ensure the target directory exists
+mkdir -p "$TARGET_DIR"
+
+echo "🧹 Cleaning up broken and orphaned symlinks in $TARGET_DIR..."
+
+# Find and delete broken symlinks (pointing to non-existent locations)
+find "$TARGET_DIR" -type l ! -exec test -e {} \; -delete
+
+# Find and delete valid symlinks that no longer belong to our skills source path
+find "$TARGET_DIR" -type l | while read -r symlink; do
+    target_path=$(readlink "$symlink")
+    if [[ "$target_path" != "$BASE_SRC_DIR"* ]]; then
+        rm "$symlink"
+    fi
+done
+
+echo "🔗 Starting symlink deployment to $TARGET_DIR..."
+
+# Find all skill subdirectories across all repositories inside the base folder
+# e.g., matching $HOME/.local/share/skills/[repo_name]/skills/[skill_name]
+find "$BASE_SRC_DIR"/*/skills -mindepth 1 -maxdepth 1 -type d | while read -r skill_path; do
+
+    skill_name=$(basename "$skill_path")
+    link_target="$TARGET_DIR/$skill_name"
+
+    # Extract repository name from path for conflict tagging (the folder before /skills)
+    repo_name=$(basename "$(dirname "$(dirname "$skill_path")")")
+
+    # Conflict management: Check if the link/folder already exists
+    if [ -e "$link_target" ] || [ -L "$link_target" ]; then
+        # If it's an existing symlink pointing somewhere else
+        if [ "$(readlink "$link_target")" != "$skill_path" ]; then
+            # Conflict: Same skill name found in multiple repositories
+            conflict_target="${link_target}_conflict-${repo_name}"
+            ln -sfn "$skill_path" "$conflict_target"
+            echo "⚠️  Conflict for skill '$skill_name'. Alternative link created: $conflict_target"
+        fi
+    else
+        # No conflict -> Create standard symlink
+        ln -s "$skill_path" "$link_target"
+    fi
+done
+
+echo "✅ Symlink completed."

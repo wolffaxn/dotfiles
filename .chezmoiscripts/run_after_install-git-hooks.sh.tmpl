@@ -6,7 +6,7 @@ SOURCE_HOOK="{{ .chezmoi.homeDir }}/.config/git/template/hooks/pre-push"
 TARGET_DIR="{{ .chezmoi.sourceDir }}/.git/hooks"
 TARGET_HOOK="$TARGET_DIR/pre-push"
 
-echo "⚡ Checking Git pre-push hook configuration..."
+echo "🛠️ Checking Git pre-push hook configuration..."
 
 # verify source hook exists
 if [ ! -f "$SOURCE_HOOK" ]; then

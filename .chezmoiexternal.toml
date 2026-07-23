@@ -1,0 +1,11 @@
+[".local/share/skills/sota"]
+    type = "git-repo"
+    url = "https://github.com/martinholovsky/SOTA-skills.git"
+    [".local/share/skills/sota".clone]
+        args = ["--branch", "v1.19.0", "--depth", "1"]
+
+[".local/share/skills/superpowers"]
+    type = "git-repo"
+    url = "https://github.com/obra/superpowers.git"
+    [".local/share/skills/superpowers".clone]
+        args = ["--branch", "v6.1.1", "--depth", "1"]
