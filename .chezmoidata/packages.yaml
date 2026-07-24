@@ -76,12 +76,14 @@ packages:
           - keychain
           - kotlin
           - maven
+          - mlx-lm
           - molecule
           - moreutils
           - neofetch
           - npm
           - nvim
           - nvtop
+          - opencode
           - openssh
           - openssl@3
           - opentofu

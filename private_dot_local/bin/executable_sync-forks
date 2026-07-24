@@ -4,7 +4,7 @@
 # Sync remote fork from its parent
 #
 
-set -eo pipefail
+set -euo pipefail
 
 declare -a dependencies=("gh" "jq")
 

@@ -1,0 +1,114 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+MLX_PATH="/opt/homebrew/bin/mlx_lm.server"
+CACHE_PATH="$HOME/.cache/huggingface/hub"
+PLIST_PATH="$HOME/Library/LaunchAgents/mlxserver.plist"
+DEFAULT_MODEL="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit"
+
+print_usage() {
+    echo "Usage: $(basename "$0") [start|stop] [--model <model_name>]"
+    echo ""
+    echo "Commands:"
+    echo "  start     Generates the configuration and starts the MLX background service"
+    echo "  stop      Stops the MLX background service"
+    echo ""
+    echo "Options:"
+    echo "  --model   Specify a custom Hugging Face model name"
+    echo "            (Default: $DEFAULT_MODEL)"
+    exit 1
+}
+
+# Ensure at least one argument is provided
+if [ $# -lt 1 ]; then
+    print_usage
+fi
+
+# Extract the main command (start or stop)
+COMMAND="$1"
+shift
+
+# Check for valid commands
+if [ "$COMMAND" != "start" ] && [ "$COMMAND" != "stop" ]; then
+    echo "Error: Unknown command '$COMMAND'"
+    print_usage
+fi
+
+# Initialize the model variable with the default value
+MODEL="$DEFAULT_MODEL"
+
+# Parse remaining arguments for the --model flag
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --model)
+            if [ -n "$2" ] && [ "${2:0:1}" != "-" ]; then
+                MODEL="$2"
+                shift 2
+            else
+                echo "Error: Argument for --model is missing"
+                print_usage
+            fi
+            ;;
+        *)
+            echo "Error: Unknown argument '$1'"
+            print_usage
+            ;;
+    esac
+done
+
+# --- EXECUTE COMMANDS ---
+
+if [ "$COMMAND" == "stop" ]; then
+    echo "Stopping current MLX background service..."
+    launchctl unload "$PLIST_PATH" 2>/dev/null
+    echo "MLX Server stopped."
+    exit 0
+fi
+
+if [ "$COMMAND" == "start" ]; then
+    echo "Stopping current MLX background service to avoid conflicts..."
+    launchctl unload "$PLIST_PATH" 2>/dev/null
+
+    echo "Configuring launchd file for model: $MODEL..."
+
+    # Dynamically generate the .plist file with the selected model
+    cat <<EOF > "$PLIST_PATH"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://apple.com">
+<plist version="1.0">
+<dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HF_HOME</key>
+        <string>$CACHE_PATH</string>
+    </dict>
+    <key>Label</key>
+    <string>mlxserver</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>$MLX_PATH</string>
+        <string>--model</string>
+        <string>$MODEL</string>
+        <string>--port</string>
+        <string>8080</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/mlx_server.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/mlx_server.err</string>
+</dict>
+</plist>
+EOF
+
+    echo "Restarting background service..."
+    launchctl load "$PLIST_PATH"
+    echo "MLX Server is now running on port 8080..."
+    exit 0
+fi
+{{- end }}

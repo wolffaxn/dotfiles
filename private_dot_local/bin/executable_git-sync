@@ -5,7 +5,7 @@
 # remote repository (origin).
 #
 
-set -eo pipefail
+set -euo pipefail
 
 ORIGIN=${1:-origin}
 UPSTREAM=${2:-upstream}

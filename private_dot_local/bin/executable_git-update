@@ -6,7 +6,7 @@
 # merged branches.
 #
 
-set -eo pipefail
+set -euo pipefail
 
 REMOTE=${1:-origin}
 BRANCH=${2:-master}
