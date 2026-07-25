@@ -1,0 +1,78 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+OLLAMA_PATH="/opt/homebrew/bin/ollama"
+HOST="127.0.0.1:11434"
+PLIST_PATH="$HOME/Library/LaunchAgents/ollamaserver.plist"
+
+print_usage() {
+    echo "Usage: $(basename "$0") [start|stop]"
+    echo ""
+    echo "Commands:"
+    echo "  start     Starts the Ollama background service"
+    echo "  stop      Stops the Ollama background service"
+    exit 1
+}
+
+if [ $# -lt 1 ]; then
+    print_usage
+fi
+
+COMMAND="$1"
+shift
+
+if [ "$COMMAND" != "start" ] && [ "$COMMAND" != "stop" ]; then
+    echo "Error: Unknown command '$COMMAND'"
+    print_usage
+fi
+
+if [ "$COMMAND" == "stop" ]; then
+    echo "Stopping current Ollama background service..."
+    launchctl unload "$PLIST_PATH" 2>/dev/null
+    echo "Ollama Server stopped."
+    exit 0
+fi
+
+if [ "$COMMAND" == "start" ]; then
+    echo "Stopping current Ollama background service to avoid conflicts..."
+    launchctl unload "$PLIST_PATH" 2>/dev/null
+
+    echo "Configuring launchd file for Ollama..."
+
+    cat <<EOF > "$PLIST_PATH"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://apple.com">
+<plist version="1.0">
+<dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>OLLAMA_HOST</key>
+        <string>$HOST</string>
+    </dict>
+    <key>Label</key>
+    <string>ollamaserver</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>$OLLAMA_PATH</string>
+        <string>serve</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/ollama_server.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/ollama_server.err</string>
+</dict>
+</plist>
+EOF
+
+    echo "Restarting background service..."
+    launchctl load "$PLIST_PATH"
+    echo "Ollama Server is now running on $HOST..."
+    exit 0
+fi
+{{- end }}

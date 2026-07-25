@@ -83,6 +83,7 @@ packages:
           - npm
           - nvim
           - nvtop
+          - ollama
           - opencode
           - openssh
           - openssl@3

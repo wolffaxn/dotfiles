@@ -4,6 +4,7 @@
 set -euo pipefail
 
 MLX_PATH="/opt/homebrew/bin/mlx_lm.server"
+HOST="127.0.0.1:8080"
 CACHE_PATH="$HOME/.cache/huggingface/hub"
 PLIST_PATH="$HOME/Library/LaunchAgents/mlxserver.plist"
 DEFAULT_MODEL="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit"
@@ -108,7 +109,7 @@ EOF
 
     echo "Restarting background service..."
     launchctl load "$PLIST_PATH"
-    echo "MLX Server is now running on port 8080..."
+    echo "MLX Server is now running on $HOST..."
     exit 0
 fi
 {{- end }}
