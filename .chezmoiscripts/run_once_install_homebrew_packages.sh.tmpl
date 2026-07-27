@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-echo "🛠️  Install homebrew packages"
+echo "🛠️ Install homebrew packages"
 
 brew bundle --file=/dev/stdin <<EOF
 {{- if and (hasKey . "packages") (hasKey .packages "darwin") (hasKey .packages.darwin "homebrew") }}

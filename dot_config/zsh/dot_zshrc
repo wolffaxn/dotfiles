@@ -3,26 +3,32 @@
 # contains sensitive data which are not pushed to GitHub.
 [ -f "$ZDOTDIR/.zshrc.local" ] && source "$ZDOTDIR/.zshrc.local"
 
+#
+# Path settings
+#
+
 # ensure path arrays do not contain duplicates.
-typeset -gU path
+typeset -gU path fpath
 # set the list of directories that zsh searches for programs
 path=(
-  $HOME/.local/bin
-  $CARGO_HOME/cargo/bin
-  $HOME/go/bin
   $path
+  /usr/local/{,s}bin(N-/)
+  ${HOME%/}/.local/bin(N-/)
+  ${HOME%/}/go/bin(N-/)
+  ${CARGO_HOME:-$HOME/.config/cargo}/cargo/bin(N-/)
 )
 # export to sub-processes (make it inherited by child processes)
 export path
 
 fpath=(
-  $HOME/.local/share/zsh/site-functions
   $fpath
+  ${HOME%/}/.local/share/zsh/site-functions(N-/)
 )
 export fpath
 
+#
 # Navigation
-# ----------
+#
 
 # navigate to directory by name without using cd
 setopt AUTO_CD
@@ -35,11 +41,12 @@ setopt PUSHD_MINUS
 # don't print the directory stack when pushing or popping
 setopt PUSHD_SILENT
 
+#
 # History
-# ----------
+#
 
 # default location for history file
-export HISTFILE=$ZDOTDIR/.zsh_history
+export HISTFILE=${ZDOTDIR%/}/.zsh_history
 
 # define history size 
 export HISTSIZE=1000000
@@ -70,8 +77,9 @@ setopt inc_append_history
 # share history between instances
 setopt share_history
 
+#
 # Completion
-# ----------
+#
 
 # complete from both ends of a word
 setopt COMPLETE_IN_WORD
@@ -98,8 +106,9 @@ else
   compinit -C
 fi
 
+#
 # Key Bindings
-# ----------
+#
 
 # use vi mode
 bindkey -v
@@ -128,8 +137,9 @@ bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
 
+# 
 # Completion Style
-# ----------
+#
 
 # suggest aliases like regular commands
 zstyle ":completion:*" complete true
@@ -146,8 +156,9 @@ zstyle ":completion:*" use-cache yes
 # show more verbose suggestion output
 zstyle ":completion:*" verbose yes
 
+#
 # Custom
-# ----------
+#
 
 source "$ZDOTDIR/aliases.zsh"
 source "$ZDOTDIR/function.zsh"
@@ -185,7 +196,9 @@ if command -v zoxide &>/dev/null; then
   eval "$(zoxide init zsh --hook pwd)"
 fi
 
+#
 # Antidote
+#
 
 # don't use the legacy antibody format
 zstyle ":antidote:bundle" use-friendly-names on

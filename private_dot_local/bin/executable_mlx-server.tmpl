@@ -5,8 +5,8 @@ set -euo pipefail
 
 MLX_PATH="/opt/homebrew/bin/mlx_lm.server"
 HOST="127.0.0.1:8080"
-CACHE_PATH="$HOME/.cache/huggingface/hub"
-PLIST_PATH="$HOME/Library/LaunchAgents/mlxserver.plist"
+CACHE_PATH="${HOME%/}/.cache/huggingface/hub"
+PLIST_PATH="${HOME%/}/Library/LaunchAgents/mlxserver.plist"
 DEFAULT_MODEL="mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit"
 
 print_usage() {
@@ -32,13 +32,13 @@ COMMAND="$1"
 shift
 
 # Check for valid commands
-if [ "$COMMAND" != "start" ] && [ "$COMMAND" != "stop" ]; then
-    echo "Error: Unknown command '$COMMAND'"
+if [ "${COMMAND}" != "start" ] && [ "{$COMMAND}" != "stop" ]; then
+    echo "Error: Unknown command '${COMMAND}'"
     print_usage
 fi
 
 # Initialize the model variable with the default value
-MODEL="$DEFAULT_MODEL"
+MODEL="${DEFAULT_MODEL}"
 
 # Parse remaining arguments for the --model flag
 while [ $# -gt 0 ]; do
@@ -61,21 +61,21 @@ done
 
 # --- EXECUTE COMMANDS ---
 
-if [ "$COMMAND" == "stop" ]; then
+if [ "${COMMAND}" == "stop" ]; then
     echo "Stopping current MLX background service..."
-    launchctl unload "$PLIST_PATH" 2>/dev/null
+    launchctl unload "${PLIST_PATH}" 2>/dev/null
     echo "MLX Server stopped."
     exit 0
 fi
 
-if [ "$COMMAND" == "start" ]; then
+if [ "${COMMAND}" == "start" ]; then
     echo "Stopping current MLX background service to avoid conflicts..."
-    launchctl unload "$PLIST_PATH" 2>/dev/null
+    launchctl unload "${PLIST_PATH}" 2>/dev/null
 
     echo "Configuring launchd file for model: $MODEL..."
 
     # Dynamically generate the .plist file with the selected model
-    cat <<EOF > "$PLIST_PATH"
+    cat <<EOF > "${PLIST_PATH}"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://apple.com">
 <plist version="1.0">
@@ -83,15 +83,15 @@ if [ "$COMMAND" == "start" ]; then
     <key>EnvironmentVariables</key>
     <dict>
         <key>HF_HOME</key>
-        <string>$CACHE_PATH</string>
+        <string>${CACHE_PATH}</string>
     </dict>
     <key>Label</key>
     <string>mlxserver</string>
     <key>ProgramArguments</key>
     <array>
-        <string>$MLX_PATH</string>
+        <string>${MLX_PATH}</string>
         <string>--model</string>
-        <string>$MODEL</string>
+        <string>${MODEL}</string>
         <string>--port</string>
         <string>8080</string>
     </array>
@@ -108,8 +108,8 @@ if [ "$COMMAND" == "start" ]; then
 EOF
 
     echo "Restarting background service..."
-    launchctl load "$PLIST_PATH"
-    echo "MLX Server is now running on $HOST..."
+    launchctl load "${PLIST_PATH}"
+    echo "MLX Server is now running on ${HOST}..."
     exit 0
 fi
 {{- end }}
