@@ -12,6 +12,7 @@ packages:
           - ansible-lint
           - ant
           - antidote
+          - atuin
           - autoconf
           - automake
           - awscli
