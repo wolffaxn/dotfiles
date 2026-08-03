@@ -62,8 +62,9 @@ shell-integration-features = cursor,sudo,no-title
 # ghostty +list-themes
 #theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 theme = Catppuccin Mocha
-background-opacity = 0.95
-background-blur-radius = 20
+background = #000000
+#background-opacity = 0.95
+#background-blur-radius = 20
 window-theme = ghostty
 
 # window
