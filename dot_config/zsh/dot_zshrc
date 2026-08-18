@@ -106,37 +106,6 @@ else
   compinit -C
 fi
 
-#
-# Key Bindings
-#
-
-# use vi mode
-bindkey -v
-
-# makes the switch between vi modes faster 
-export KEYTIMEOUT=1
-
-# better searching in command mode
-bindkey -M vicmd "?" history-incremental-search-backward
-bindkey -M vicmd "/" history-incremental-search-forward
-
-# beginning search with arrow keys in insert mode or k/j command mode
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search
-bindkey "^[[B" down-line-or-beginning-search
-bindkey -M vicmd "k" up-line-or-beginning-search
-bindkey -M vicmd "j" down-line-or-beginning-search
-
-# use vim keys (hjkl) in menu selection
-zmodload zsh/complist
-bindkey -M menuselect "h" vi-backward-char
-bindkey -M menuselect "j" vi-down-line-or-history
-bindkey -M menuselect "k" vi-up-line-or-history
-bindkey -M menuselect "l" vi-forward-char
-
 # 
 # Completion Style
 #
@@ -160,8 +129,14 @@ zstyle ":completion:*" verbose yes
 # Custom
 #
 
-source "$ZDOTDIR/aliases.zsh"
-source "$ZDOTDIR/function.zsh"
+function _zsh_file_add() {
+  [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+}
+
+_zsh_file_add fzf.zsh
+_zsh_file_add aliases.zsh
+_zsh_file_add bindings.zsh
+_zsh_file_add function.zsh
 
 # set SSH_AUTH_SOCK so that SSH will use gpg-agent instead of ssh-agent
 unset SSH_AGENT_PID
@@ -200,23 +175,10 @@ if command -v fzf &>/dev/null; then
   source <(fzf --zsh)
 fi
 
-# starship
+# starship (always initialized last to avoid conflicts)
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 fi
 
-#
-# Antidote
-#
-
-# don't use the legacy antibody format
-zstyle ":antidote:bundle" use-friendly-names on
-
-zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins
-if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
-  (
-    source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
-    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
-  )
-fi
-source ${zsh_plugins}.zsh
+# Load plugins last so all Atuin/FZF widgets are recognized
+_zsh_file_add plugins.zsh

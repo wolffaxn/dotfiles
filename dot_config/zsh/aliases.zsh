@@ -35,8 +35,9 @@ alias grep="grep --color=auto"
 alias https="http --default-scheme=https"
 
 # better ls
-alias ls="eza --git --group-directories-first --icons"
+alias la="eza -la --git --group-directories-first --icons"
 alias ll="eza -l --git --group-directories-first --icons"
+alias ls="eza --git --group-directories-first --icons"
 alias lt="eza --git --group-directories-first --icons --tree"
 
 # get week number
