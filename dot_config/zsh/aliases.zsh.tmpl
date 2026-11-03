@@ -47,7 +47,26 @@ alias week="date +%V"
 alias zreload="source $ZDOTDIR/.zshrc"
 
 alias dotfiles="cd $HOME/.dotfiles"
-alias icloud="cd $HOME/Library/Mobile\ Documents"
 
 # lazygit
 alias lg="lazygit"
+
+# display listening ports
+alias ports="sudo lsof -PiTCP -sTCP:LISTEN"
+
+# IP addresses
+alias ipv4="curl -qs -4 https://ifconfig.me"
+alias ipv6="curl -qs -6 https://ifconfig.me"
+alias ip=ipv4
+
+{{ if eq .chezmoi.os "darwin" -}}
+# lock screen when going AFK
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# go to iCloud Drive directory
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+
+# hide/show all desktop icons (useful when presenting)
+alias hidedesktop='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+{{- end }}

@@ -1,11 +1,11 @@
 # ~/.config/zsh/function.zsh
 
-function dsx() {
-  find . -name "*.DS_Store" -type f -delete
+function b64() {
+  echo -n "$*" | base64
 }
 
-function flush-dns() {
-  sudo killall -HUP mDNSResponder
+function b64decode() {
+  echo -n "$*" | base64 --decode
 }
 
 function fname() {
@@ -33,3 +33,13 @@ function randpw() {
 function showcert() {
   echo | openssl s_client -showcerts -servername $argv[1] -connect $argv[1]:443 2>/dev/null | openssl x509 -inform pem -noout -text
 }
+
+{{ if eq .chezmoi.os "darwin" -}}
+function dsx() {
+  find . -name "*.DS_Store" -type f -delete
+}
+
+function dnsclear() {
+  dscacheutil -flushcache && sudo killall -HUP mDNSResponder
+}
+{{- end }}
