@@ -22,9 +22,9 @@ font-feature = "ss03"
 font-feature = "ss04"
 # liga: //, ..., ||
 font-feature = "liga"
-font-size = 16
+font-size = 14
 
-command = /usr/bin/env zsh --login -c "if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then tmux new -A -s mac >/dev/null 2>&1; fi"
+command = /usr/bin/env zsh -l -i -c "if command -v tmux >/dev/null 2>&1 && [ -z \"$TMUX\" ]; then tnew; fi; exec zsh"
 
 cursor-style = block
 cursor-style-blink = true

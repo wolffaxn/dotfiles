@@ -182,3 +182,4 @@ fi
 
 # Load plugins last so all Atuin/FZF widgets are recognized
 _zsh_file_add plugins.zsh
+

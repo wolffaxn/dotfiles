@@ -42,4 +42,16 @@ function dsx() {
 function dnsclear() {
   dscacheutil -flushcache && sudo killall -HUP mDNSResponder
 }
+
+function tnew() {
+  if ! tmux has-session -t mac 2>/dev/null; then
+    tmux new-session -d -s mac
+    for i in {2..4}; do
+      tmux new-window -d -t mac
+    done
+    tmux new-window -d -t mac -n "dotfiles" -c "$HOME/.local/share/chezmoi"
+    tmux new-window -d -t mac "btop"
+  fi
+  tmux attach-session -t mac
+}
 {{- end }}
