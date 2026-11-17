@@ -7,10 +7,10 @@ Host *
   Protocol 2
 
   # enables the sharing of multiple sessions over a single network connection
-  ControlMaster auto 
+  ControlMaster auto
   ControlPath ~/.ssh/control/%r@%h:%p
   ControlPersist 1800
-  
+
   # use compression
   Compression yes
   # number of server alive messages
@@ -27,7 +27,7 @@ Host *
   PasswordAuthentication no
   # allow authentication with public keys
   PubkeyAuthentication yes
-  
+
   # verify the remote key using DNS and SSHFP resource records
   VerifyHostKeyDNS yes
 
